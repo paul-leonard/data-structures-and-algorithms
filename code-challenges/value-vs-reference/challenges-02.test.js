@@ -45,6 +45,9 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
+  // arr.push(arr[0]);
+  let throwAwayArray = arr;
+  throwAwayArray.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +84,10 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  let throwAwayArrayOfObjects = people;
+  throwAwayArrayOfObjects.forEach( value => {
+    value.isAuthor = true;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,7 +107,10 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
-
+  const throwAwayArrayB = arr1;
+  // append(throwAwayArrayB,arr2);
+  // throwAwayArrayB.push(arr2);
+  arr2.forEach( value => throwAwayArrayB.push(value));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -149,7 +158,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
@@ -160,7 +169,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
