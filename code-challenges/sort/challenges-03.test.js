@@ -180,6 +180,26 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  arr.sort((a,b) => {
+    let c = a.lastName;
+    let d = b.lastName;
+    if(c < d) {
+      return -1;
+    } else if (c > d) {
+      return 1;
+    } else {
+      c = a.firstName;
+      d = b.firstName;
+      if(c < d) {
+        return -1;
+      } else if (c > d) {
+        return 1;
+      } else {
+        return a.age - b.age;
+      }
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -237,6 +257,7 @@ $ = createSnippetWithJQuery(`
 
 const addPearClass = () => {
   // Solution code here...
+  $(`li:nth-child(3)`).addClass(`pear`);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -334,7 +355,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -378,7 +399,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should add a class of pear to the thrid li', () => {
     addPearClass();
     expect($('li:nth-child(3)').hasClass('pear')).toBe(true);
