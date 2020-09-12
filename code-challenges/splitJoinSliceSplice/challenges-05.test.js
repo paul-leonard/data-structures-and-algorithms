@@ -138,37 +138,55 @@ const gruffaloCrumble = {
 };
 
 
+// solution with explanation
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
 
+  // copy the array of strings containing measured ingredients from the object
   let measuredListArray = gruffaloCrumble.ingredients;
 
-  measuredListArray.forEach( (a,b) => {
+  // look at each line item ingredient seperately, so need to step through array
+  measuredListArray.forEach( (a) => {
     let measuredIngredient = a;
-    // break each long string into an array of single characters
     let singleCharacterArr = [];
 
+    // break each long string into an array of single characters
     for (let j = 0; j < measuredIngredient.length; j++) {
-      let singleCharacter = measuredIngredient.slice(j,j+1);
       //I was missing this +1 for an hour or more
+      let singleCharacter = measuredIngredient.slice(j,j+1);
       singleCharacterArr.push(singleCharacter);
     }
 
     //find the first space
     let firstSpace = singleCharacterArr.indexOf(' ');
 
-    //find the second space... have to start at either the first space or first space plus 1
+    //find the second space
     let whereToStartSearch = firstSpace + 1;
     let secondSpace = singleCharacterArr.indexOf(' ',whereToStartSearch);
 
+    //cut off the first part of the string
     let whereToCut = secondSpace + 1;
-    let nonMeasuredIndieFood = measuredIngredient.slice(whereToCut);
+    let nonMeasuredIngredient = measuredIngredient.slice(whereToCut);
 
-    result.push(nonMeasuredIndieFood);
+    result.push(nonMeasuredIngredient);
   });
   return result;
 };
+
+//going for shortest
+// const listFoods = (recipe) => {
+//   let result = [];
+//   gruffaloCrumble.ingredients.forEach( (measuredIngredient) => {
+//     let singleCharacterArr = [];
+//     for (let j = 0; j < measuredIngredient.length; j++) {
+//       singleCharacterArr.push(measuredIngredient.slice(j,j+1));
+//     }
+//     result.push(measuredIngredient.slice(singleCharacterArr.indexOf(' ',singleCharacterArr.indexOf(' ')+1)+1));
+//   });
+//   return result;
+// };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
