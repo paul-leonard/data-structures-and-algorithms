@@ -65,6 +65,17 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  // for (let i = 0 ; i <= str.length+1; i++) {
+  //   // result.push(str.slice(((str.length)*-1),i));
+  //   result.push(str.slice(str.length,i);
+  // }
+  // result.sort((a,b) => {
+  //   return (b.length - a.length);
+  // });
+
+  for (let i = 0 ; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -76,9 +87,14 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+// const wordsToCharList = (arr) => {
+//   // Solution code here...
+//   let answer = arr.split('');
+//   return answer;
+// };
+
+const wordsToCharList = (arr) => arr.split('');
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,6 +141,32 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+
+  let measuredListArray = gruffaloCrumble.ingredients;
+
+  measuredListArray.forEach( (a,b) => {
+    let measuredIngredient = a;
+    // break each long string into an array of single characters
+    let singleCharacterArr = [];
+
+    for (let j = 0; j < measuredIngredient.length; j++) {
+      let singleCharacter = measuredIngredient.slice(j,j+1);
+      //I was missing this +1 for an hour or more
+      singleCharacterArr.push(singleCharacter);
+    }
+
+    //find the first space
+    let firstSpace = singleCharacterArr.indexOf(' ');
+
+    //find the second space... have to start at either the first space or first space plus 1
+    let whereToStartSearch = firstSpace + 1;
+    let secondSpace = singleCharacterArr.indexOf(' ',whereToStartSearch);
+
+    let whereToCut = secondSpace + 1;
+    let nonMeasuredIndieFood = measuredIngredient.slice(whereToCut);
+
+    result.push(nonMeasuredIndieFood);
+  });
   return result;
 };
 
