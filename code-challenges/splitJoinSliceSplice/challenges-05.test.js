@@ -159,6 +159,7 @@ const listFoods = (recipe) => {
     }
 
     //find the first space
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
     let firstSpace = singleCharacterArr.indexOf(' ');
 
     //find the second space
