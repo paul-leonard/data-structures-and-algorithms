@@ -125,6 +125,7 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
+// trying and seeing if array has truthy values of existing
 // const hasChildrenValues = (arr, character) => {
 //   // Solution code here...
 //   let hasKids = 0;
@@ -142,20 +143,55 @@ hasChildrenValues(characters, 'Sansa') will return false
 //   return hasKids;
 // };
 
+
+// // verbose from repl.it troubleshooting
+// const hasChildrenValues = (arr, character) => {
+//   // Solution code here...
+//   let hasKids = 0;
+//   arr.forEach((value,index) => {
+//     console.log(index,value);
+//     console.log('name: ',value.name);
+//     if (value.name === character) {
+//       console.log('inside if statement------');
+//       let arrOfAllAnswers = Object.values(value);
+
+//       let arrOfChildren = arrOfAllAnswers[2];
+
+//       console.log('children: ',arrOfChildren);
+//       // let numOfChildren = arrOfChildren.length();
+//       // if (numOfChildren > 0) {
+//       //   hasKids = 1;
+//       // }
+
+//       if (arrOfChildren.length > 0) {
+//         hasKids = 1;
+//         console.log('has them kids!!!')
+//       }
+//     }
+//   });
+//   return hasKids;
+// };
+
+// array length:  https://www.w3schools.com/JSREF/jsref_length_array.asp
+
+
+
+// refactored answer
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
   let hasKids = 0;
   arr.forEach((value) => {
     if (value.name === character) {
-      let arrOfChildren = Object.values(value);
-      let numOfChildren = arrOfChildren.length();
-      if (numOfChildren > 0) {
+      if (Object.values(value)[2].length > 0) {
         hasKids = 1;
       }
     }
   });
   return hasKids;
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
