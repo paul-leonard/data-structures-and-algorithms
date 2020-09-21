@@ -115,7 +115,83 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+
+  // remove non-numbers
+  // are there any non-numbers in the arrays?
+  // let regex = /D/;
+  // let nonNumberArrayFlag = 0;
+  // input.forEach( (valueArr) => {
+  //   valueArr.forEach( (valueInt) => {
+  //     if (regex.test(valueInt)) {
+  //       nonNumberArrayFlag = 1;
+  //     }
+  //   });
+  // });
+
+  // if (nonNumberArrayFlag === 1) {
+  //   input = [];
+  // }
+
+  // let nonNumberArrayFlag = 0;
+  // input.forEach( (valueArr) => {
+  //   valueArr.forEach( (valueInt) => {
+  //     if (isNaN(valueInt)) {
+  //       nonNumberArrayFlag = 1;
+  //     }
+  //   });
+  // });
+
+  // if (nonNumberArrayFlag === 1) {
+  //   input = [];
+  // }
+
+
+  let dirtyArrOfArrNaN = input;
+  let cleanArrOfArrNaN = dirtyArrOfArrNaN.map( (valueArrNaN) => {
+    let cleanArrNaN = valueArrNaN.filter( (valueIntNaN) => {
+      if (isNaN(valueIntNaN)) {
+        valueIntNaN = [];
+      }
+      return valueIntNaN;
+    });
+    return cleanArrNaN;
+  });
+
+
+
+
+  //remove numbers not divisable by 5
+  let dirtyArrOfArr = cleanArrOfArrNaN;
+  let cleanArrOfArr = dirtyArrOfArr.map( (valueArr) => {
+    let cleanArr = valueArr.filter( (valueInt) => {
+      // if ((regex.test(valueInt))) {
+      //   valueInt = [];
+      // }
+      return !(valueInt % 5);
+    });
+    return cleanArr;
+  });
+
+
+  // raise 2 to the value for each array position
+  let powerUpArrOfArr = cleanArrOfArr.map( (valueArr) => {
+    let innerPoweredArr = valueArr.map( (valueInt) => {
+      let poweredValue = Math.pow(2,valueInt);
+      return poweredValue;
+    });
+    return innerPoweredArr;
+  });
+
+  // if (nonNumberArrayFlag === 1) {
+  //   powerUpArrOfArr = [];
+  // }
+
+  return powerUpArrOfArr;
 };
+
+// https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html#:~:text=In%20regex%2C%20the%20uppercase%20metacharacter,%5E0%2D9%5D%20).
+
+//https://www.w3schools.com/jsref/jsref_isnan.asp#:~:text=The%20isNaN()%20function%20determines,Otherwise%20it%20returns%20false.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stetch Goal
