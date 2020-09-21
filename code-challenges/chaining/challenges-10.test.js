@@ -146,30 +146,55 @@ const divisibleByFiveTwoToThePower = (input) => {
   // }
 
 
-  let dirtyArrOfArrNaN = input;
-  let cleanArrOfArrNaN = dirtyArrOfArrNaN.map( (valueArrNaN) => {
-    let cleanArrNaN = valueArrNaN.filter( (valueIntNaN) => {
-      if (isNaN(valueIntNaN)) {
-        valueIntNaN = [];
-      }
-      return valueIntNaN;
-    });
-    return cleanArrNaN;
-  });
 
+
+
+  // let nonNumberArrayFlag = 0;
+
+  // let dirtyArrOfArrNaN = input;
+  // let cleanArrOfArrNaN = dirtyArrOfArrNaN.map( (valueArrNaN) => {
+  //   let cleanArrNaN = valueArrNaN.map( (valueIntNaN) => {
+  //     if (isNaN(valueIntNaN)) {
+  //       // valueIntNaN = [];
+  //       nonNumberArrayFlag = 1;
+
+
+  //     }
+  //     return valueIntNaN;
+  //   });
+  //   return cleanArrNaN;
+  // });
+
+
+
+
+
+  // let dirtyArrOfArrNaN = input;
+  // let cleanArrOfArrNaN = dirtyArrOfArrNaN.map( (valueArrNaN) => {
+  //   let cleanArrNaN = valueArrNaN.filter( (valueIntNaN) => {
+  //     return !(isNaN(valueIntNaN));
+  //   });
+  //   return cleanArrNaN;
+  // });
 
 
 
   //remove numbers not divisable by 5
-  let dirtyArrOfArr = cleanArrOfArrNaN;
+  let dirtyArrOfArr = input;
   let cleanArrOfArr = dirtyArrOfArr.map( (valueArr) => {
     let cleanArr = valueArr.filter( (valueInt) => {
       // if ((regex.test(valueInt))) {
       //   valueInt = [];
       // }
-      return !(valueInt % 5);
+      return (!(valueInt % 5));
     });
-    return cleanArr;
+    let cleanerArr = cleanArr.filter( (valueInt) => {
+      // if ((regex.test(valueInt))) {
+      //   valueInt = [];
+      // }
+      return (!(isNaN(valueInt)));
+    });
+    return cleanerArr;
   });
 
 
