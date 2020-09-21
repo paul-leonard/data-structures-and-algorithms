@@ -277,9 +277,16 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  
-
+  let letterArr = str.split('');
+  let reversedStr = letterArr.reduce( (stringSoFar, currentLetter) => {
+    stringSoFar = currentLetter + stringSoFar;
+    return stringSoFar;
+  },'');
+  return reversedStr;
 };
+
+
+// https://www.w3schools.com/jsref/jsref_split.asp
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
