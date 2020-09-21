@@ -27,6 +27,7 @@ const createServer = () => {
 
   // Routes go here
   // Solution code here...
+app.get(`/events`, getCurrentEvents);
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
@@ -161,14 +162,26 @@ const currentEvents = {
 
 function getCurrentEvents(request, response){
   // Solution code here...
+  let arrayOfNewsObjectsForFrontEnd = mapCurrentEvents();
+  response.status(200).send(arrayOfNewsObjectsForFrontEnd);
 }
 
 const mapCurrentEvents = () => {
   // Solution code here...
+  let arrayOfEvents = [];
+  for (var i = 0; i < currentEvents.news.length; i++) {
+    arrayOfEvents.push(new Event(currentEvents.news[i]));
+  }
+  return arrayOfEvents;
 }
 
 function Event(obj){
-  // Solution code here...
+  this.author = obj.author;
+  this.categories = obj.category;
+  this.summary = obj.description;
+  this.img_url = obj.image;
+  this.date = obj.published;
+  this.title = obj.title;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -246,6 +259,12 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  // starWarsData is an array of Objects
+  let namesArr = arr.reduce ( (accum, value) => {
+    accum.push(value.name);
+    return accum;
+  },[]);
+  return namesArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -258,6 +277,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
