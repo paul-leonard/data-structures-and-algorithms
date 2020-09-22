@@ -77,9 +77,28 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
-  let regex = /\d{3}.*\d{3}.*\d{4}$/;
+  let regex = /\d{3}.*\d{3}.{0,1}\d{4}$/;
   return regex.test(phoneNumber);
 };
+
+
+// Test Strings I was using in regex101.com:
+// Want True
+// (555) 555-5555
+// (555)555 5555
+// 555 555-5555
+// 555-5555555
+// 555-555 5555
+// 555-555-5555
+// 555 555 5555
+// 555555-5555
+// 5555555555
+
+// Want False
+// 222 222 2222 ext. 2222
+// 222 222-2222-
+// (222 222- 2222
+// (222 222-2222
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
