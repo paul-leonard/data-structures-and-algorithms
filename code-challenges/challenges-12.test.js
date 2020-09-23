@@ -52,16 +52,42 @@ const grandTotal = (stores) => {
   // Solution code here...
   let cookieSalesPerHour =  [];
 
-  for (let hourBucket = 0; hourBucket < hoursOpen.length; hourBucket++) {
+  hoursOpen.forEach( (value, hourBucket) => {
     cookieSalesPerHour.push(0);
-    for (let storeNumber = 0; storeNumber < stores.length; storeNumber++) {
-      cookieSalesPerHour[hourBucket] = cookieSalesPerHour[hourBucket] + stores[storeNumber][hourBucket];
-    }
-  }
-
+    stores.forEach( (value, storeNumber) => {
+      cookieSalesPerHour[hourBucket] += stores[storeNumber][hourBucket];
+    });
+  });
   return cookieSalesPerHour;
 };
 
+
+// const grandTotal = (stores) => {
+//   // Solution code here...
+//   let cookieSalesPerHour =  [];
+
+//   hoursOpen.forEach( (value, hourBucket) => {
+//     cookieSalesPerHour.push(0);
+//     stores.forEach( (value, storeNumber) => {
+//       cookieSalesPerHour[hourBucket] += stores[storeNumber][hourBucket];
+//     });
+//   });
+//   return cookieSalesPerHour;
+// };
+
+
+// const grandTotal = (stores) => {
+//   // Solution code here...
+//   let cookieSalesPerHour =  [];
+
+//   for (let hourBucket = 0; hourBucket < hoursOpen.length; hourBucket++) {
+//     cookieSalesPerHour.push(0);
+//     for (let storeNumber = 0; storeNumber < stores.length; storeNumber++) {
+//       cookieSalesPerHour[hourBucket] = cookieSalesPerHour[hourBucket] + stores[storeNumber][hourBucket];
+//     }
+//   }
+//   return cookieSalesPerHour;
+// };
 
 //goal for later, how to use a reduce function in this
 
@@ -77,6 +103,14 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+
+  let cookieSalesPerHourAsArrayOfObjects =  [];
+
+  hours.forEach( (value, hourBucket) => {
+    let timeBucketObject = { sales: `${data[hourBucket]} cookies`, time : `${hours[hourBucket]}`};
+    cookieSalesPerHourAsArrayOfObjects.push(timeBucketObject);
+  });
+  return cookieSalesPerHourAsArrayOfObjects;
 };
 
 /* ------------------------------------------------------------------------------------------------
