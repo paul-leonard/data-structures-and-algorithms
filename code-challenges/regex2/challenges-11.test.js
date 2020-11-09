@@ -52,6 +52,21 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  let trueIfValid = 1;
+  let test1regex = /\w.\w/;
+  if (test1regex.test(email)===1) {
+    let test2regex = //;
+    if (test2regex.test(email)===1) {
+      //next test
+      //placeholder for now
+      trueIfValid = 1;
+    } else {
+      trueIfValid = 0;
+    }
+  } else {
+    trueIfValid = 0;
+  }
+  return trueIfValid;
 };
 
 /* ------------------------------------------------------------------------------------------------
