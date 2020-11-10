@@ -2,6 +2,22 @@
 
 ## Language: `Python`
 
+-----------------------------------------------------------------
+# Reverse an Array
+The challenge is to produce a function that reverses an array using low level commands and functions.
+
+## Challenge
+Without using built in functions to reverse an array, code a function to accomplish the same outcome in a verbose way using simple built in functions.
+
+## Approach & Efficiency
+My partner, Will Motchoffo, used an array reassignment, the push function, and a for loop to reverse the array.  In regards to Big O, both the time and memory required for this approach is linear, O(n).  On our whiteboard, we had thought the memory for this approach would be constant, O(1), but now I do not think that is correct.
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/array_reverse/reverse_array.png)
+-----------------------------------------------------------------
+
+
+
 ### Folder and Challenge Setup
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
