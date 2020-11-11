@@ -10,13 +10,35 @@ The challenge is to produce a function that reverses an array using low level co
 Without using built in functions to reverse an array, code a function to accomplish the same outcome in a verbose way using simple built in functions.
 
 ## Approach & Efficiency
-My partner, Will Motchoffo, used an array reassignment, the push function, and a for loop to reverse the array.  In regards to Big O, both the time and memory required for this approach is linear, O(n).  On our whiteboard, we had thought the memory for this approach would be constant, O(1), but now I do not think that is correct.
+My partner, Will Motchoffo, used an array reassignment, the push function, and a for loop to reverse the array.  In regards to Big O, both the time and memory required for this approach are linear, O(n).  On our whiteboard, we had thought the memory for this approach would be constant, O(1), but now I do not think that is correct.
 
 ## Solution
 [Picture of Whiteboard Exercise](code_challenges/array_reverse/reverse_array.png)
+
+
+
+
+-----------------------------------------------------------------
+# Insert Shift Array
+The challenge is to produce a function that inserts a new number into the middle of an array.
+
+## Challenge
+Without using built in functions to insert a number into an array, code a function to accomplish the same outcome in a verbose way using simple built in functions.
+
+## Approach & Efficiency
+My partners, James Swift and Yoni Palagashvili, used math, rounding function, if/else statements, a for loop, and list addition to produce the results.  In regards to Big O, both the time and memory required for this approach are linear, O(n).
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/array_shift/array_shift.png)
+
+
+
+
+-----------------------------------------------------------------
 -----------------------------------------------------------------
 
 
+# Standard/Template Info:
 
 ### Folder and Challenge Setup
 
