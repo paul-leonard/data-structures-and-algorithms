@@ -16,6 +16,7 @@ My partner, Alex Pena, and I used math, if/else statements, and a recursive subf
 ## Solution
 - [Picture of Whiteboard Exercise #1](code_challenges/array_binary_search/whiteboard-code-3.png)
 - [Picture of Whiteboard Exercise #2](code_challenges/array_binary_search/Visual-Code-3.png)
+- [Picture of Whiteboard Exercise #3](code_challenges/array_binary_search/Visual-Code-Handle-Not-Found.png)
 
 
 
