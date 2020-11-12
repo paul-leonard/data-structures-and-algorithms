@@ -2,8 +2,44 @@
 
 ## Language: `Python`
 
+
 -----------------------------------------------------------------
-# Reverse an Array
+# Array Binary Search  (Code Challenge 3)
+The challenge is to produce a function that finds the index position of a given value within a given array.
+
+## Challenge
+Without using built in functions designed for this purpose, code a function to accomplish the same outcome in a verbose way using simple built in functions.
+
+## Approach & Efficiency
+My partner, Alex Pena, and I used math, if/else statements, and a recursive subfunction to accomplish the task.  In regards to Big O, both the time and memory required for this approach are logarithmic, O(log n).
+
+## Solution
+- [Picture of Whiteboard Exercise #1](code_challenges/array_binary_search/whiteboard-code-3.png)
+- [Picture of Whiteboard Exercise #2](code_challenges/array_binary_search/Visual-Code-3.png)
+
+
+
+
+
+
+-----------------------------------------------------------------
+# Insert Shift Array  (Code Challenge 2)
+The challenge is to produce a function that inserts a new number into the middle of an array.
+
+## Challenge
+Without using built in functions to insert a number into an array, code a function to accomplish the same outcome in a verbose way using simple built in functions.
+
+## Approach & Efficiency
+My partners, James Swift and Yoni Palagashvili, used math, rounding function, if/else statements, a for loop, and list addition to produce the results.  In regards to Big O, both the time and memory required for this approach are linear, O(n).
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/array_shift/array_shift.png)
+
+
+
+
+-----------------------------------------------------------------
+# Reverse an Array (Code Challenge 1)
 The challenge is to produce a function that reverses an array using low level commands and functions.
 
 ## Challenge
@@ -15,21 +51,6 @@ My partner, Will Motchoffo, used an array reassignment, the push function, and a
 ## Solution
 [Picture of Whiteboard Exercise](code_challenges/array_reverse/reverse_array.png)
 
-
-
-
------------------------------------------------------------------
-# Insert Shift Array
-The challenge is to produce a function that inserts a new number into the middle of an array.
-
-## Challenge
-Without using built in functions to insert a number into an array, code a function to accomplish the same outcome in a verbose way using simple built in functions.
-
-## Approach & Efficiency
-My partners, James Swift and Yoni Palagashvili, used math, rounding function, if/else statements, a for loop, and list addition to produce the results.  In regards to Big O, both the time and memory required for this approach are linear, O(n).
-
-## Solution
-[Picture of Whiteboard Exercise](code_challenges/array_shift/array_shift.png)
 
 
 
