@@ -4,6 +4,26 @@
 
 
 -----------------------------------------------------------------
+# Singly Linked List  (Code Challenge 5)
+Created the structure to instantiate a singly linked list through the use of a LinkedList class and Node class.
+
+## Challenge
+Create a singly linked list architecture and structure using classes.  Provide methods to create a new linked list, add nodes to it, search if a value is stored in the linked list, and to provide a string version of all of the values.
+
+## Approach & Efficiency
+Linked lists provide Big O benefits over the use of arrays when adding new values to the dataset.  This architecture stores any additional values added to the linked list in the head position, providing a Big O(1) for time.  The memory required is still dependent on the input and its size, making it Big O(n).
+
+## API
+This module may be interacted with to do several things.  Below is a description of how to instantiate a new list and the methods available on it.
+
+1. Create a new singly Linked List by calling on the class:  your_new_list = LinkedList()
+2. Add a value to the class:  your_new_list.insert(value)
+3. Determine if a value is in a linked list:  your_new_list.includes(value)
+4. Create a string containing all of the values in the list:  your_new_list.__str__
+
+
+
+-----------------------------------------------------------------
 # Array Binary Search  (Code Challenge 3)
 The challenge is to produce a function that finds the index position of a given value within a given array.
 
