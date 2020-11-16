@@ -4,7 +4,7 @@
 
 
 -----------------------------------------------------------------
-# Singly Linked List  (Code Challenge 4)
+# Singly Linked List  (Code Challenge 5)
 Created the structure to instantiate a singly linked list through the use of a LinkedList class and Node class.
 
 ## Challenge
