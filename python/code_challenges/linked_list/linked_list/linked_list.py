@@ -1,5 +1,5 @@
 '''
-Required features:
+Challenge 5 required features:
 - [x] Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 - [x] Within your LinkedList class, include a head property.
 - [x] Upon instantiation, an empty Linked List should be created.
@@ -7,6 +7,11 @@ Required features:
 - [x] Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 - [x] Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
     - "{ a } -> { b } -> { c } -> NULL"
+
+Challenge 6 Required features:
+- [x] .append(value) which adds a new node with the given value to the end of the list
+- [ ] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+- [ ] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 '''
 
 class LinkedList:
@@ -39,11 +44,21 @@ class LinkedList:
     text_version = ""
     current = self.head
     while current.next_node != "empty":
-      text_version = text_version + "{ " + current.value + " } -> "
+      text_version = text_version + "{ " + str(current.value) + " } -> "
       current = current.next_node
 
-    text_version = text_version + "{ " + current.value + " } -> NULL"
+    text_version = text_version + "{ " + str(current.value) + " } -> NULL"
     return text_version
+
+  def append(self, value):
+    if self.head == "empty":
+      self.insert(value)
+    else:
+      current = self.head
+      while current.next_node != "empty":
+        current = current.next_node
+
+      current.next_node = Node(value, "empty")
 
 
 class Node():

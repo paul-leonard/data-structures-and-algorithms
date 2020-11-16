@@ -1,5 +1,5 @@
 '''
-Required testing features:
+Challenge 5 Required testing features:
 - [x] Can successfully instantiate an empty linked list
 - [x] Can properly insert into the linked list
 - [x] The head property will properly point to the first node in the linked list
@@ -7,6 +7,14 @@ Required testing features:
 - [x] Will return true when finding a value within the linked list that exists
 - [x] Will return false when searching for a value in the linked list that does not exist
 - [x] Can properly return a collection of all the values that exist in the linked list
+
+Challenge 6 Required testing features:
+- [x] Can successfully add a node to the end of the linked list
+- [x] Can successfully add multiple nodes to the end of a linked list
+- [ ] Can successfully insert a node before a node located i the middle of a linked list
+- [ ] Can successfully insert a node before the first node of a linked list
+- [ ] Can successfully insert after a node in the middle of the linked list
+- [ ] Can successfully insert a node after the last node of the linked list
 '''
 
 import pytest
@@ -86,6 +94,15 @@ def test___str___full():
   expected = "{ a } -> { b } -> { c } -> NULL"
   assert actual == expected
 
+def test___str___full_numbers():
+  test_list = LinkedList()
+  test_list.insert(3)
+  test_list.insert(2)
+  test_list.insert(1)
+  actual = test_list.__str__()
+  expected = "{ 1 } -> { 2 } -> { 3 } -> NULL"
+  assert actual == expected
+
 def test___str___one():
   test_list = LinkedList()
   test_list.insert("a")
@@ -98,3 +115,38 @@ def test___str___empty():
   actual = test_list.__str__()
   expected = "NULL"
   assert actual == expected
+
+
+#Code Challenge 6 Tests
+def test_append_one_emtpy():
+  test_list = LinkedList()
+  test_list.append("only thing")
+  actual = test_list.head.value
+  expected = "only thing"
+  assert actual == expected
+
+def test_append_one():
+  test_list = LinkedList()
+  test_list.insert(2)
+  test_list.insert(3)
+  test_list.insert(1)
+  test_list.append(5)
+  actual = test_list.__str__
+  expected = "{ 1 } -> { 3 } -> { 2 } -> { 5 } -> NULL"
+
+def test_append_many():
+  test_list = LinkedList()
+  test_list.insert(2)
+  test_list.insert(3)
+  test_list.insert(1)
+  test_list.append(5)
+  test_list.append(11)
+  test_list.append(3)
+  actual = test_list.__str__
+  expected = "{ 1 } -> { 3 } -> { 2 } -> { 5 } -> { 11 } -> { 3 } -> NULL"
+
+def test_append_many():
+  test_list = LinkedList()
+  test_list.append(3)
+  actual = test_list.__str__
+  expected = "{ 3 } -> NULL"
