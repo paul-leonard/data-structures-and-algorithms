@@ -11,7 +11,7 @@ Required features:
 
 class LinkedList:
   """
-  Put docstring here
+  The LinkedList class definition can be used to create a new singly linked list comprised of nodes.  When empty, the attritube head carries a string value of "empty".
   """
 
   def __init__(self):
@@ -32,10 +32,13 @@ class LinkedList:
 
     return False
 
+  def __str__():
+    pass
+
 
 class Node():
   """
-  sdfsdf
+  The Node class definition can be used to instantiate an element, or node, in an instance of the LinkedList class.  It contains the value of its node and the next node.
   """
 
   def __init__(self, value, next_node):

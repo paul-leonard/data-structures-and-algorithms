@@ -13,9 +13,11 @@ import pytest
 
 from code_challenges.linked_list.linked_list.linked_list import LinkedList, Node
 
+#test for connection
 def test_LinkedList():
   assert LinkedList
 
+#test for creating an empty list
 def test_LinkedList_empty():
   actual = LinkedList().head
   expected = "empty"
@@ -39,7 +41,7 @@ def test_multi_insert():
   expected = [4, 3, 2, 1,]
   assert actual == expected
 
-def test_multi_insert():
+def test_multi_insert_head_value():
   test_list = LinkedList()
   test_list.insert(1)
   test_list.insert(2)
@@ -73,4 +75,26 @@ def test_includes_empty():
   test_list = LinkedList()
   actual = test_list.includes(2)
   expected = False
+  assert actual == expected
+
+def test___str___full():
+  test_list = LinkedList()
+  test_list.insert("c")
+  test_list.insert("b")
+  test_list.insert("a")
+  actual = test_list.__str__()
+  expected = "{ a } -> { b } -> { c } -> NULL"
+  assert actual == expected
+
+def test___str___one():
+  test_list = LinkedList()
+  test_list.insert("a")
+  actual = test_list.__str__()
+  expected = "{ a } -> NULL"
+  assert actual == expected
+
+def test___str___empty():
+  test_list = LinkedList()
+  actual = test_list.__str__()
+  expected = "NULL"
   assert actual == expected
