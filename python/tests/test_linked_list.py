@@ -4,8 +4,8 @@ Required testing features:
 [x] Can properly insert into the linked list
 [x] The head property will properly point to the first node in the linked list
 [x] Can properly insert multiple nodes into the linked list
-[ ] Will return true when finding a value within the linked list that exists
-[ ] Will return false when searching for a value in the linked list that does not exist
+[x] Will return true when finding a value within the linked list that exists
+[x] Will return false when searching for a value in the linked list that does not exist
 [ ] Can properly return a collection of all the values that exist in the linked list
 '''
 
@@ -49,3 +49,28 @@ def test_multi_insert():
   expected = 4
   assert actual == expected
 
+def test_includes_contains():
+  test_list = LinkedList()
+  test_list.insert(1)
+  test_list.insert(2)
+  test_list.insert(3)
+  test_list.insert(4)
+  actual = test_list.includes(2)
+  expected = True
+  assert actual == expected
+
+def test_includes_missing():
+  test_list = LinkedList()
+  test_list.insert(1)
+  test_list.insert(2)
+  test_list.insert(3)
+  test_list.insert(4)
+  actual = test_list.includes(6)
+  expected = False
+  assert actual == expected
+
+def test_includes_empty():
+  test_list = LinkedList()
+  actual = test_list.includes(2)
+  expected = False
+  assert actual == expected
