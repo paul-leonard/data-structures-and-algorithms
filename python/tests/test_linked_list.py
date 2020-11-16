@@ -19,7 +19,7 @@ Challenge 6 Required testing features:
 
 import pytest
 
-from code_challenges.linked_list.linked_list.linked_list import LinkedList, Node
+from code_challenges.linked_list.linked_list.linked_list import LinkedList
 
 #test for connection
 def test_LinkedList():
@@ -131,8 +131,10 @@ def test_append_one():
   test_list.insert(3)
   test_list.insert(1)
   test_list.append(5)
-  actual = test_list.__str__
+  actual = str(test_list)
   expected = "{ 1 } -> { 3 } -> { 2 } -> { 5 } -> NULL"
+  assert actual == expected
+
 
 def test_append_many():
   test_list = LinkedList()
@@ -142,11 +144,48 @@ def test_append_many():
   test_list.append(5)
   test_list.append(11)
   test_list.append(3)
-  actual = test_list.__str__
+  actual = str(test_list)
   expected = "{ 1 } -> { 3 } -> { 2 } -> { 5 } -> { 11 } -> { 3 } -> NULL"
+  assert actual == expected
 
-def test_append_many():
+def test_append_empty_number():
   test_list = LinkedList()
   test_list.append(3)
-  actual = test_list.__str__
+  actual = str(test_list)
   expected = "{ 3 } -> NULL"
+  assert actual == expected
+
+def test_insertBefore_middle():
+  test_list = LinkedList()
+  test_list.insert(3)
+  test_list.insert(1)
+  test_list.append(5)
+  test_list.append(11)
+  test_list.append(3)
+  test_list.insert_Before(5,8)
+  actual = str(test_list)
+  expected = "{ 1 } -> { 3 } -> { 8 } -> { 5 } -> { 11 } -> { 3 } -> NULL"
+  assert actual == expected
+
+def test_insertBefore_begin():
+  test_list = LinkedList()
+  test_list.insert(3)
+  test_list.insert(1)
+  test_list.append(5)
+  test_list.append(11)
+  test_list.append(3)
+  test_list.insertBefore(1,31)
+  actual = str(test_list)
+  expected = "{ 31 } -> { 1 } -> { 3 } -> { 5 } -> { 11 } -> { 3 } -> NULL"
+  assert actual == expected
+
+def test_insertBefore_notInList():
+  test_list = LinkedList()
+  test_list.insert(3)
+  test_list.insert(1)
+  test_list.append(5)
+  test_list.append(11)
+  test_list.append(3)
+  actual = test_list.insertBefore(16,31)
+  expected = "An error has occured"
+  assert actual == expected

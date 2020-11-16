@@ -60,6 +60,9 @@ class LinkedList:
 
       current.next_node = Node(value, "empty")
 
+  def insertBefore(self, value, newVal):
+    pass
+
 
 class Node():
   """
