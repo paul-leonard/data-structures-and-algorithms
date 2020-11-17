@@ -162,7 +162,7 @@ def test_insertBefore_middle():
   test_list.append(5)
   test_list.append(11)
   test_list.append(3)
-  test_list.insert_Before(5,8)
+  test_list.insertBefore(5,8)
   actual = str(test_list)
   expected = "{ 1 } -> { 3 } -> { 8 } -> { 5 } -> { 11 } -> { 3 } -> NULL"
   assert actual == expected
@@ -189,3 +189,11 @@ def test_insertBefore_notInList():
   actual = test_list.insertBefore(16,31)
   expected = "An error has occured"
   assert actual == expected
+
+
+
+
+
+
+
+# @pytest.mark.skip("pending")

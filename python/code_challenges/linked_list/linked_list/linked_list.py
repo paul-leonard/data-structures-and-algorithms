@@ -61,7 +61,21 @@ class LinkedList:
       current.next_node = Node(value, "empty")
 
   def insertBefore(self, value, newVal):
-    pass
+    current = self.head
+
+    if current == "empty":
+      return "An error has occured"
+
+    if current.value == value:
+      self.insert(newVal)
+
+    while current.next_node != "empty":
+      if current.next_node.value == value:
+        current.next_node = Node(newVal, current.next_node)
+        break
+      current = current.next_node
+      if current.next_node == "empty":
+          return "An error has occured"
 
 
 class Node():
