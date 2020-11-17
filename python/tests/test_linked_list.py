@@ -236,3 +236,35 @@ def test_insertAfter_notInList():
   expected = "An error has occured"
   assert actual == expected
 
+'''
+Challenge 7 Required testing features:
+- [ ] Where k is greater than the length of the linked list
+- [ ] Where k and the length of the list are the same
+- [ ] Where k is not a positive integer
+- [ ] Where the linked list is of a size 1
+- [ ] “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+'''
+
+def test_kthFromEnd_tooLong():
+  test_list = LinkedList()
+  test_list.insert(5)
+  test_list.insert(4)
+  test_list.insert(3)
+  test_list.insert(2)
+  test_list.insert(1)
+  actual = test_list.kthFromEnd(7)
+  expected = 'Exception'
+  assert actual == expected
+
+def test_kthFromEnd_same():
+  test_list = LinkedList()
+  test_list.insert(5)
+  test_list.insert(4)
+  test_list.insert(3)
+  test_list.insert(2)
+  test_list.insert(1)
+  actual = test_list.kthFromEnd(5)
+  expected = 1
+  assert actual == expected
+
+#WRITE MORE TESTS, whiteboard, submit
