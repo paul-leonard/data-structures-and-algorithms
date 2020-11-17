@@ -5,6 +5,25 @@
 -----------------------------------------------------------------
 
 
+# Linked List: K-th Value From the End  (Code Challenge 7)
+Add one new method to the Linked List class defined during Challenge 5.  This method will find the value a certain number of positions from the end.
+
+## Challenge
+Create the following methods to insert new nodes into a Linked List:
+1. kthFromEnd: For a given integer, find the value stored in the node that is that number of positions ahead of the end of the Linked List.
+1. Stetch: middleValue: Find the number in the center position of a Linked List
+
+## Approach & Efficiency
+While loops are used to step two "node tracking variables" through the linked list nodes.  One node recieves a headstart and searches for the end of the list.  The head start is provided by a conditional statement to delay the second "node tracking variable".  If statement conditionals are also used to identify edge and error cases.  In regards to Big O, the time required for the approach is linear, O(n).  That is because we may have to go to the last node in the Linked List.  Memory is only being used to store a single value result (constant), so therefore it is O(1).  HOWEVER... if the value stored in that node is a more data intense value (like another list), it may become a Big O(n).
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/linked_list/CodeChallenge7.png)
+
+
+
+-----------------------------------------------------------------
+
+
 # Linked List Insertions  (Code Challenge 6)
 Add three new methods of insertion to the Linked List class defined during Challenge 5.
 

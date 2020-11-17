@@ -12,6 +12,10 @@ Challenge 6 Required features:
 - [x] .append(value) which adds a new node with the given value to the end of the list
 - [x] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 - [x] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
+Challenge 7 Required features:
+- [ ] Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+- [ ] Stretch:  Once you’ve achieved a working solution, implement a method that finds the node at the middle of the Linked List.
 '''
 
 class LinkedList:
