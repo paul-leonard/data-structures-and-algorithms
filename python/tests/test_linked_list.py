@@ -13,8 +13,8 @@ Challenge 6 Required testing features:
 - [x] Can successfully add multiple nodes to the end of a linked list
 - [x] Can successfully insert a node before a node located i the middle of a linked list
 - [x] Can successfully insert a node before the first node of a linked list
-- [ ] Can successfully insert after a node in the middle of the linked list
-- [ ] Can successfully insert a node after the last node of the linked list
+- [x] Can successfully insert after a node in the middle of the linked list
+- [x] Can successfully insert a node after the last node of the linked list
 '''
 
 import pytest
@@ -190,10 +190,42 @@ def test_insertBefore_notInList():
   expected = "An error has occured"
   assert actual == expected
 
+def test_insertAfter_middle():
+  test_list = LinkedList()
+  test_list.insert(2)
+  test_list.insert(3)
+  test_list.insert(1)
+  test_list.insertAfter(3,5)
+  actual = str(test_list)
+  expected = "{ 1 } -> { 3 } -> { 5 } -> { 2 } -> NULL"
+  assert actual == expected
 
+def test_insertAfter_end():
+  test_list = LinkedList()
+  test_list.insert(2)
+  test_list.insert(3)
+  test_list.insert(1)
+  test_list.insertAfter(2,5)
+  actual = str(test_list)
+  expected = "{ 1 } -> { 3 } -> { 2 } -> { 5 } -> NULL"
+  assert actual == expected
 
+def test_insertAfter_middleDouble():
+  test_list = LinkedList()
+  test_list.insert(2)
+  test_list.insert(2)
+  test_list.insert(1)
+  test_list.insertAfter(2,5)
+  actual = str(test_list)
+  expected = "{ 1 } -> { 2 } -> { 5 } -> { 2 } -> NULL"
+  assert actual == expected
 
+def test_insertAfter_notInList():
+  test_list = LinkedList()
+  test_list.insert(2)
+  test_list.insert(3)
+  test_list.insert(1)
+  actual = test_list.insertAfter(4,5)
+  expected = "An error has occured"
+  assert actual == expected
 
-
-
-# @pytest.mark.skip("pending")

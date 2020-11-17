@@ -11,7 +11,7 @@ Challenge 5 required features:
 Challenge 6 Required features:
 - [x] .append(value) which adds a new node with the given value to the end of the list
 - [x] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
-- [ ] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+- [x] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 '''
 
 class LinkedList:
@@ -76,6 +76,21 @@ class LinkedList:
       current = current.next_node
       if current.next_node == None:
           return "An error has occured"
+
+  def insertAfter(self, value, newVal):
+    current = self.head
+
+    if current == None:
+      return "An error has occured"
+
+    while True:
+      if current.value == value:
+        new_node = Node(newVal, current.next_node)
+        current.next_node = new_node
+        break
+      current = current.next_node
+      if current == None:
+        return "An error has occured"
 
 
 class Node():
