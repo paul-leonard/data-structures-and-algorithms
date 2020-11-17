@@ -10,27 +10,27 @@ Challenge 5 required features:
 
 Challenge 6 Required features:
 - [x] .append(value) which adds a new node with the given value to the end of the list
-- [ ] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+- [x] .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 - [ ] .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 '''
 
 class LinkedList:
   """
-  The LinkedList class definition can be used to create a new singly linked list comprised of nodes.  When empty, the attritube head carries a string value of "empty".
+  The LinkedList class definition can be used to create a new singly linked list comprised of nodes.  When empty, the attritube head carries a string value of None.
   """
 
   def __init__(self):
-    self.head = "empty"
+    self.head = None
 
   def insert(self, value):
     self.head = Node(value, self.head)
 
   def includes(self, value):
-    if self.head == "empty":
+    if self.head == None:
       return False
 
     current = self.head
-    while current.next_node != "empty":
+    while current.next_node != None:
       current = current.next_node
       if current.value == value:
         return True
@@ -38,12 +38,12 @@ class LinkedList:
     return False
 
   def __str__(self):
-    if self.head == "empty":
+    if self.head == None:
       return "NULL"
 
     text_version = ""
     current = self.head
-    while current.next_node != "empty":
+    while current.next_node != None:
       text_version = text_version + "{ " + str(current.value) + " } -> "
       current = current.next_node
 
@@ -51,30 +51,30 @@ class LinkedList:
     return text_version
 
   def append(self, value):
-    if self.head == "empty":
+    if self.head == None:
       self.insert(value)
     else:
       current = self.head
-      while current.next_node != "empty":
+      while current.next_node != None:
         current = current.next_node
 
-      current.next_node = Node(value, "empty")
+      current.next_node = Node(value, None)
 
   def insertBefore(self, value, newVal):
     current = self.head
 
-    if current == "empty":
+    if current == None:
       return "An error has occured"
 
     if current.value == value:
       self.insert(newVal)
 
-    while current.next_node != "empty":
+    while current.next_node != None:
       if current.next_node.value == value:
         current.next_node = Node(newVal, current.next_node)
         break
       current = current.next_node
-      if current.next_node == "empty":
+      if current.next_node == None:
           return "An error has occured"
 
 
