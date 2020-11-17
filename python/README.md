@@ -2,6 +2,25 @@
 
 ## Language: `Python`
 
+-----------------------------------------------------------------
+
+
+# Linked List Insertions  (Code Challenge 6)
+Add three new methods of insertion to the Linked List class defined during Challenge 5.
+
+## Challenge
+Create the following methods to insert new nodes into a Linked List:
+1. append: add a new node to the end of the list
+1. insertBefore: insert a new node before the node containing the target value
+1. insertAfter: insert a new node after the node containing the target value
+
+## Approach & Efficiency
+While loops are used to step through the linked list nodes while using if conditionals to find target values or the end of the Linked List.  The previously defined Node Class is used to instantiate the new node.  In regards to Big O, both the time and memory required for these three approaches are linear, O(n).
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/linked_list/CodeChallenge6.png)
+
+
 
 -----------------------------------------------------------------
 # Singly Linked List  (Code Challenge 5)
