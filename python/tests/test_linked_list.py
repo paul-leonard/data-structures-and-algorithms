@@ -32,7 +32,7 @@ Challenge 8 Required testing features:
 
 import pytest
 
-from code_challenges.linked_list.linked_list.linked_list import LinkedList
+from code_challenges.linked_list.linked_list.linked_list import LinkedList, zipLists
 
 #test for connection
 def test_LinkedList():
@@ -324,7 +324,8 @@ def test_zipLists_same_length():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL"
   assert actual == expected
 
-  def test_zipLists_second_longer():
+@pytest.mark.skip("pending")
+def test_zipLists_second_longer():
   test_list_1 = LinkedList()
   test_list_1.insert(3)
   test_list_1.insert(1)
@@ -337,7 +338,8 @@ def test_zipLists_same_length():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL"
   assert actual == expected
 
-  def test_zipLists_first_longer():
+@pytest.mark.skip("pending")
+def test_zipLists_first_longer():
   test_list_1 = LinkedList()
   test_list_1.insert(2)
   test_list_1.insert(3)

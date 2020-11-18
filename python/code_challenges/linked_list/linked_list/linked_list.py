@@ -128,3 +128,29 @@ class Node():
   def __init__(self, value, next_node):
     self.value = value
     self.next_node = next_node
+
+
+def zipLists(list1, list2):
+    result_head = list1.head
+    current1 = list1.head
+    current2 = list2.head
+
+    while current1 and current2:
+        temp1 = current1.next_node
+        temp2 = current2.next_node
+
+        current1.next_node = current2
+        current2.next_node = temp1
+
+        current1 = current2.next_node
+        current2 = temp2
+
+    while current1:
+        list1.append(current1.next_node)
+        current1 = current1.next_node
+
+    while current2:
+        list1.append(current2.next_node)
+        current2 = current2.next_node
+
+    return result_head
