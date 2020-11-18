@@ -146,11 +146,11 @@ def zipLists(list1, list2):
         current2 = temp2
 
     while current1:
-        list1.append(current1.next_node)
+        list1.append(current1.value)
         current1 = current1.next_node
 
     while current2:
-        list1.append(current2.next_node)
+        list1.append(current2.value)
         current2 = current2.next_node
 
     return result_head

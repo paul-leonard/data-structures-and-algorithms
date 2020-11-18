@@ -324,7 +324,6 @@ def test_zipLists_same_length():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL"
   assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_zipLists_second_longer():
   test_list_1 = LinkedList()
   test_list_1.insert(3)
@@ -336,6 +335,20 @@ def test_zipLists_second_longer():
   head_of_merge = zipLists(test_list_1, test_list_2)
   actual = str(test_list_1)
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL"
+  assert actual == expected
+
+def test_zipLists_second_longer_by_two():
+  test_list_1 = LinkedList()
+  test_list_1.insert(3)
+  test_list_1.insert(1)
+  test_list_2 = LinkedList()
+  test_list_2.insert(3)
+  test_list_2.insert(4)
+  test_list_2.insert(9)
+  test_list_2.insert(5)
+  head_of_merge = zipLists(test_list_1, test_list_2)
+  actual = str(test_list_1)
+  expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> { 3 } -> NULL"
   assert actual == expected
 
 @pytest.mark.skip("pending")
