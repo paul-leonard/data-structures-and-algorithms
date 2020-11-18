@@ -15,6 +15,13 @@ Challenge 6 Required testing features:
 - [x] Can successfully insert a node before the first node of a linked list
 - [x] Can successfully insert after a node in the middle of the linked list
 - [x] Can successfully insert a node after the last node of the linked list
+
+Challenge 7 Required testing features:
+- [x] Where k is greater than the length of the linked list
+- [x] Where k and the length of the list are the same
+- [x] Where k is not a positive integer
+- [x] Where the linked list is of a size 1
+- [x] “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
 '''
 
 import pytest
@@ -229,3 +236,54 @@ def test_insertAfter_notInList():
   expected = "An error has occured"
   assert actual == expected
 
+
+# Challenge 7 Tests for kthFromEnd
+
+def test_kthFromEnd_tooLong():
+  test_list = LinkedList()
+  test_list.insert(5)
+  test_list.insert(4)
+  test_list.insert(3)
+  test_list.insert(2)
+  test_list.insert(1)
+  actual = test_list.kthFromEnd(7)
+  expected = 'Exception'
+  assert actual == expected
+
+def test_kthFromEnd_same():
+  test_list = LinkedList()
+  test_list.insert(5)
+  test_list.insert(4)
+  test_list.insert(3)
+  test_list.insert(2)
+  test_list.insert(1)
+  actual = test_list.kthFromEnd(5)
+  expected = 1
+  assert actual == expected
+
+def test_kthFromEnd_negNumber():
+  test_list = LinkedList()
+  test_list.insert(3)
+  test_list.insert(2)
+  test_list.insert(1)
+  actual = test_list.kthFromEnd(-3)
+  expected = 'Exception'
+  assert actual == expected
+
+def test_kthFromEnd_one():
+  test_list = LinkedList()
+  test_list.insert(3)
+  actual = test_list.kthFromEnd(1)
+  expected = 3
+  assert actual == expected
+
+def test_kthFromEnd_middle():
+  test_list = LinkedList()
+  test_list.insert(5)
+  test_list.insert(4)
+  test_list.insert(3)
+  test_list.insert(2)
+  test_list.insert(1)
+  actual = test_list.kthFromEnd(3)
+  expected = 3
+  assert actual == expected
