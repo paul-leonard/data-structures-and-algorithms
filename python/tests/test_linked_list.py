@@ -24,8 +24,8 @@ Challenge 7 Required testing features:
 - [x] “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
 
 Challenge 8 Required testing features:
-- [ ] head of first list the same as merged head
-- [ ] two linked lists of same length
+- [x] head of first list the same as merged head
+- [x] two linked lists of same length
 - [ ] second link list is longer
 - [ ] first link list is longer
 '''
@@ -324,6 +324,7 @@ def test_zipLists_same_length():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL"
   assert actual == expected
 
+@pytest.mark.skip("pending")
 def test_zipLists_second_longer():
   test_list_1 = LinkedList()
   test_list_1.insert(3)
@@ -337,6 +338,7 @@ def test_zipLists_second_longer():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL"
   assert actual == expected
 
+@pytest.mark.skip("pending")
 def test_zipLists_second_longer_by_two():
   test_list_1 = LinkedList()
   test_list_1.insert(3)
