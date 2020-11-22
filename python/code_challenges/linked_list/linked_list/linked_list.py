@@ -16,6 +16,12 @@ Challenge 6 Required features:
 Challenge 7 Required features:
 - [x] Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 - [ ] Stretch:  Once you’ve achieved a working solution, implement a method that finds the node at the middle of the Linked List.
+
+Challenge 8 Required features:
+- [x] Write a function called zipLists which takes two linked lists as arguments.
+- [x] Zip the two linked lists together into one so that the nodes alternate between the two lists
+- [x] Return a reference to the head of the zipped list.
+- [x] Try and keep additional space down to O(1).
 '''
 
 class LinkedList:
@@ -128,3 +134,25 @@ class Node():
   def __init__(self, value, next_node):
     self.value = value
     self.next_node = next_node
+
+
+def zipLists(list1, list2):
+    result_head = list1.head
+    current1 = list1.head
+    current2 = list2.head
+
+    while current1 and current2:
+        temp1 = current1.next_node
+        temp2 = current2.next_node
+
+        current1.next_node = current2
+        current2.next_node = temp1
+
+        if not temp1:
+            current2.next_node = temp2
+            return result_head
+
+        current1 = current2.next_node
+        current2 = temp2
+
+    return result_head

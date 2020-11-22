@@ -22,11 +22,17 @@ Challenge 7 Required testing features:
 - [x] Where k is not a positive integer
 - [x] Where the linked list is of a size 1
 - [x] “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+
+Challenge 8 Required testing features:
+- [x] head of first list the same as merged head
+- [x] two linked lists of same length
+- [x] second link list is longer
+- [x] first link list is longer
 '''
 
 import pytest
 
-from code_challenges.linked_list.linked_list.linked_list import LinkedList
+from code_challenges.linked_list.linked_list.linked_list import LinkedList, zipLists
 
 #test for connection
 def test_LinkedList():
@@ -286,4 +292,74 @@ def test_kthFromEnd_middle():
   test_list.insert(1)
   actual = test_list.kthFromEnd(3)
   expected = 3
+  assert actual == expected
+
+#Code Challenge 8 Tests
+
+def test_zipLists_same_head():
+  test_list_1 = LinkedList()
+  test_list_1.insert(2)
+  test_list_1.insert(3)
+  test_list_1.insert(1)
+  test_list_2 = LinkedList()
+  test_list_2.insert(4)
+  test_list_2.insert(9)
+  test_list_2.insert(5)
+  head_of_merge = zipLists(test_list_1, test_list_2)
+  actual = head_of_merge
+  expected = test_list_1.head
+  assert actual == expected
+
+def test_zipLists_same_length():
+  test_list_1 = LinkedList()
+  test_list_1.insert(2)
+  test_list_1.insert(3)
+  test_list_1.insert(1)
+  test_list_2 = LinkedList()
+  test_list_2.insert(4)
+  test_list_2.insert(9)
+  test_list_2.insert(5)
+  head_of_merge = zipLists(test_list_1, test_list_2)
+  actual = str(test_list_1)
+  expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL"
+  assert actual == expected
+
+def test_zipLists_second_longer():
+  test_list_1 = LinkedList()
+  test_list_1.insert(3)
+  test_list_1.insert(1)
+  test_list_2 = LinkedList()
+  test_list_2.insert(4)
+  test_list_2.insert(9)
+  test_list_2.insert(5)
+  head_of_merge = zipLists(test_list_1, test_list_2)
+  actual = str(test_list_1)
+  expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL"
+  assert actual == expected
+
+def test_zipLists_second_longer_by_two():
+  test_list_1 = LinkedList()
+  test_list_1.insert(3)
+  test_list_1.insert(1)
+  test_list_2 = LinkedList()
+  test_list_2.insert(3)
+  test_list_2.insert(4)
+  test_list_2.insert(9)
+  test_list_2.insert(5)
+  head_of_merge = zipLists(test_list_1, test_list_2)
+  actual = str(test_list_1)
+  expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> { 3 } -> NULL"
+  assert actual == expected
+
+def test_zipLists_first_longer():
+  test_list_1 = LinkedList()
+  test_list_1.insert(2)
+  test_list_1.insert(3)
+  test_list_1.insert(1)
+  test_list_2 = LinkedList()
+  test_list_2.insert(9)
+  test_list_2.insert(5)
+  head_of_merge = zipLists(test_list_1, test_list_2)
+  actual = str(test_list_1)
+  expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL"
   assert actual == expected

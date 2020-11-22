@@ -2,6 +2,24 @@
 
 ## Language: `Python`
 
+
+-----------------------------------------------------------------
+
+
+# Linked List: Zip Two Linked Lists  (Code Challenge 8)
+Create a function to zip two linked lists together.
+
+## Challenge
+Create a function, when given two linked lists, zips the two linked lists together in a way that alternates between each list.  The function should be able to handle linked lists of different lengths, regardless of order provided as arguments.
+
+## Approach & Efficiency
+Progression through both linked lists occurs using a common while loop while two unique "current" position trackers pace through their respective linked lists.  Two temporary variables are used to retain the next_node location as next_node attributes are overwritten.  The time related Big O for this operation is O(n).  For the most part, the memory is Big O(1).  However, if the linked list node's themselves contain a large amount of data, when that data is stored in the temporary value... it could still have a Big O(n) impact?  After some discussion in class, we learned that Big O is large scale and broad strokes.  Therefore, it is more of the size of the input list that makes it O(n), not the size of an individual element or node.  Therefore, this approach is Big O(1).
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/linked_list/CodeChallenge8.png)
+
+
+
 -----------------------------------------------------------------
 
 
