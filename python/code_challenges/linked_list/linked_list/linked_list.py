@@ -19,7 +19,7 @@ Challenge 7 Required features:
 
 Challenge 8 Required features:
 - [x] Write a function called zipLists which takes two linked lists as arguments.
-- [ ] Zip the two linked lists together into one so that the nodes alternate between the two lists
+- [x] Zip the two linked lists together into one so that the nodes alternate between the two lists
 - [x] Return a reference to the head of the zipped list.
 - [x] Try and keep additional space down to O(1).
 '''
@@ -146,30 +146,13 @@ def zipLists(list1, list2):
         temp2 = current2.next_node
 
         current1.next_node = current2
-        current2.next_node = temp1 #or current2.next_node
+        current2.next_node = temp1
 
-        # if not current2.next_node and temp2:
-            #stuff = temp
-
-        # if not temp2 and current2.next_node:
-            #stuff
+        if not temp1:
+            current2.next_node = temp2
+            return result_head
 
         current1 = current2.next_node
         current2 = temp2
-
-    # if current1:
-    #     list1.append(current1)
-
-    # if current2:
-    #     list1.append(current2.value)
-    #     current2 = current2.next_node
-
-    # while current1:
-    #     list1.append(current1.value)
-    #     current1 = current1.next_node
-
-    # while current2:
-    #     list1.append(current2.value)
-    #     current2 = current2.next_node
 
     return result_head

@@ -26,8 +26,8 @@ Challenge 7 Required testing features:
 Challenge 8 Required testing features:
 - [x] head of first list the same as merged head
 - [x] two linked lists of same length
-- [ ] second link list is longer
-- [ ] first link list is longer
+- [x] second link list is longer
+- [x] first link list is longer
 '''
 
 import pytest
@@ -324,7 +324,6 @@ def test_zipLists_same_length():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL"
   assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_zipLists_second_longer():
   test_list_1 = LinkedList()
   test_list_1.insert(3)
@@ -338,7 +337,6 @@ def test_zipLists_second_longer():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NULL"
   assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_zipLists_second_longer_by_two():
   test_list_1 = LinkedList()
   test_list_1.insert(3)
@@ -353,7 +351,6 @@ def test_zipLists_second_longer_by_two():
   expected = "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> { 3 } -> NULL"
   assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_zipLists_first_longer():
   test_list_1 = LinkedList()
   test_list_1.insert(2)
