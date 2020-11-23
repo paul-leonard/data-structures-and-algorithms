@@ -2,6 +2,31 @@
 
 ## Language: `Python`
 
+-----------------------------------------------------------------
+
+
+
+# Stacks and Queues (Code Challenge 10)
+Create a package defining classes for Nodes, Stacks, and Queues to provide a structure for data.
+
+## Challenge
+Create a Stack class definition that can be used to create an instance of a stack data structure.  It will be composed of nodes and has the methods of push, pop, is_empty, and peek.  It has an attribute of top.  Create a Queue class definition that can be used to create an instance of a queue data structure.  It will be composed of nodes and has the methods of enqueue, dequeue, is_empty, and peek.  It has attritubes of rear and front.
+
+## Approach & Efficiency
+The stack and queue can both only be modified by their class methods.  The stack is FILO and can only be accessed by its head.  The queue is FIFO and has pointers of front and rear.  New node elements are added to the rear and removed nodes are pulled from the front.  Given these access methods and structure, all of the methods for both of these classes are Big O(1) for both memory and time.
+
+## API
+**The methods available for the Stack class are:**
+- *push(value_to_add):*  add the value supplied to the top of the stack to the front
+- *pop*:  remove and return the value of the top of the stack
+- *is_empty:*  returns true if the stack is empty
+- *peek*:  returns the value of the top of the stack
+**The methods available for the Queue class are:**
+- *enqueue(value_to_add):*  add the value supplied to the rear of the queue
+- *dequeue:*  remove and return the value at the front of the queue
+- *is_empty:*  returns true if the queue is empty
+- *peek*:  returns the value at the front of the queue
+
 
 -----------------------------------------------------------------
 
