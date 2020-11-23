@@ -19,3 +19,12 @@ Challenge 10 Required Features: AuthenticationCreate a Node class that has prope
 '''
 
 from code_challenges.linked_list.linked_list.linked_list import LinkedList
+
+class InvalidOperationError(Exception):
+    pass
+
+class Stack:
+    pass
+
+class Queue:
+    pass
