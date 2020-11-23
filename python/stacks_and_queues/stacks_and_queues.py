@@ -53,7 +53,36 @@ class Stack():
 
 
 class Queue:
-    pass
+    '''
+    This class...
+    '''
+
+    def __init__(self):
+        self.front = self.rear = None
+
+    def enqueue(self, value):
+        if not self.is_empty():
+            self.rear.next_node = Node(value)
+            self.rear = self.rear.next_node
+        else:
+            self.front = self.rear = Node(value)
+
+    def is_empty(self):
+        return not self.front
+
+    def dequeue(self,):
+        if not self.is_empty():
+            temp = self.front
+            self.front = self.front.next_node
+            temp.next_node = None
+            return temp.value
+        raise InvalidOperationError()
+
+    def peek(self):
+        if not self.is_empty():
+            return self.front.value
+        raise InvalidOperationError()
+
 
 class Node():
     """
