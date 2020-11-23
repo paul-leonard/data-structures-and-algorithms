@@ -1,5 +1,6 @@
 '''
-Challenge 10 Required Features: AuthenticationCreate a Node class that has properties for the value stored in the Node, and a pointer to the next node.
+Challenge 10 Required Features:
+- [x] Create a Node class that has properties for the value stored in the Node, and a pointer to the next node.
 - [ ] Create a Stack class that has a top property. It creates an empty Stack when instantiated.
 - [ ] This object should be aware of a default empty value assigned to top when the stack is created.
 - [ ] Define a method called push which takes any value as an argument and adds a new node with that value to the top of the stack with an O(1) Time performance.
@@ -23,8 +24,43 @@ from code_challenges.linked_list.linked_list.linked_list import LinkedList
 class InvalidOperationError(Exception):
     pass
 
-class Stack:
-    pass
+class Stack():
+    '''
+    This Stack class ...
+    '''
+
+    def __init__(self):
+        self.top = None
+
+    def push(self, value_to_add):
+        self.top = Node(value_to_add,self.top)
+
+    def pop(self):
+        if self.top:
+            temp = self.top
+            self.top = self.top.next_node
+            temp.next_node = None
+            return temp.value
+        raise InvalidOperationError("Method not allowed on empty collection")
+
+    def is_empty(self):
+        return not self.top
+
+    def peek(self):
+        if self.is_empty():
+            raise InvalidOperationError("Method not allowed on empty collection")
+        return self.top.value
+
 
 class Queue:
     pass
+
+class Node():
+    """
+    The Node class definition can be used to instantiate an element, or node, in an instance of the LinkedList class.  It contains the value of its node and the next node.
+    """
+
+    def __init__(self, value, next_node=None):
+        self.value = value
+        self.next_node = next_node
+

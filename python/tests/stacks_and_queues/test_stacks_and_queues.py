@@ -86,7 +86,6 @@ def test_pop_until_empty():
     expected = True
     assert actual == expected
 
-
 def test_peek():
     s = Stack()
     s.push("apple")
@@ -115,6 +114,7 @@ def test_pop_empty():
 
 #Queue Tests
 
+@pytest.mark.skip("pending")
 def test_enqueue():
     q = Queue()
     q.enqueue("apple")
@@ -123,6 +123,7 @@ def test_enqueue():
     assert actual == expected
 
 
+@pytest.mark.skip("pending")
 def test_dequeue():
     q = Queue()
     q.enqueue("apple")
@@ -132,7 +133,8 @@ def test_dequeue():
     assert actual == expected
 
 
-def test_peek():
+@pytest.mark.skip("pending")
+def test_peek_2():
     q = Queue()
     q.enqueue("apple")
     q.enqueue("banana")
@@ -142,12 +144,14 @@ def test_peek():
     assert actual == expected
 
 
+@pytest.mark.skip("pending")
 def test_peek_when_empty():
     q = Queue()
     with pytest.raises(InvalidOperationError):
         q.peek()
 
 
+@pytest.mark.skip("pending")
 def test_enqueue_one():
     q = Queue()
     q.enqueue("apples")
@@ -156,6 +160,7 @@ def test_enqueue_one():
     assert actual == expected
 
 
+@pytest.mark.skip("pending")
 def test_enqueue_two():
     q = Queue()
     q.enqueue("apples")
@@ -165,12 +170,14 @@ def test_enqueue_two():
     assert actual == expected
 
 
+@pytest.mark.skip("pending")
 def test_dequeue_when_empty():
     q = Queue()
     with pytest.raises(InvalidOperationError):
         q.dequeue()
 
 
+@pytest.mark.skip("pending")
 def test_dequeue_when_full():
     q = Queue()
     q.enqueue("apples")
@@ -180,6 +187,7 @@ def test_dequeue_when_full():
     assert actual == expected
 
 
+@pytest.mark.skip("pending")
 def test_peek_post_dequeue():
     q = Queue()
     q.enqueue("apples")
@@ -189,14 +197,14 @@ def test_peek_post_dequeue():
     expected = "bananas"
     assert actual == expected
 
-
+@pytest.mark.skip("pending")
 def test_is_empty():
     q = Queue()
     actual = q.is_empty()
     expected = True
     assert actual == expected
 
-
+@pytest.mark.skip("pending")
 def test_exhausted():
     q = Queue()
     q.enqueue("apple")
