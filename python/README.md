@@ -4,7 +4,34 @@
 
 -----------------------------------------------------------------
 
+# PseudoQueues Using Stacks (Code Challenge 11)
+Create a package defining classes for PseudoQueues to provide a structure for data, using Stacks and Nodes under the hood.
 
+## Challenge
+Create a brand new PseudoQueue class. Do not use an existing Queue. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below), but will internally only utilize 2 Stack objects. Ensure that you create your class with the following methods:
+enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
+dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
+The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation. Instantiate these Stack objects in your PseudoQueue constructor.
+
+## Approach & Efficiency
+The PseudoQueue can both only be modified by its class methods.  The PseudoQueue is FIFO.  New node elements are added to the rear and removed nodes are pulled from the front.  Given these access methods and structure, all of the methods are Big O(1) for both memory and time.
+
+## API
+**The methods available for the Stack class are:**
+- *push(value_to_add):*  add the value supplied to the top of the stack to the front
+- *pop*:  remove and return the value of the top of the stack
+- *is_empty:*  returns true if the stack is empty
+- *peek*:  returns the value of the top of the stack
+**The methods available for the Queue class are:**
+- *enqueue(value_to_add):*  add the value supplied to the rear of the queue
+- *dequeue:*  remove and return the value at the front of the queue
+- *is_empty:*  returns true if the queue is empty
+- *peek*:  returns the value at the front of the queue
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/linked_list/Code_Challenge_11.png)
+
+-----------------------------------------------------------------
 
 # Stacks and Queues (Code Challenge 10)
 Create a package defining classes for Nodes, Stacks, and Queues to provide a structure for data.
