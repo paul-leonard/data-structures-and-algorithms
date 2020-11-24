@@ -1,5 +1,5 @@
 '''
-Chalenge 11 Required Features:
+Challenge 11 Required Features:
 - [x] Create a brand new PseudoQueue class.
 - [x] enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
 - [x] dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
