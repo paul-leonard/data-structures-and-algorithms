@@ -47,3 +47,62 @@ def test_enqueue_dog():
     actual = shelter.dog_queue.peek().name
     expected = "Spot"
     assert actual == expected
+
+def test_request_cat():
+    cat = Cat("Felix")
+    shelter = AnimalShelter()
+    shelter.enqueue(cat)
+    actual = shelter.dequeue("cat").name
+    expected = "Felix"
+    assert actual == expected
+
+def test_request_cat_line_of_two():
+    cat = Cat("Felix")
+    cat2 = Cat("Garfield")
+    shelter = AnimalShelter()
+    shelter.enqueue(cat)
+    shelter.enqueue(cat2)
+    actual = shelter.dequeue("cat").name
+    expected = "Felix"
+    assert actual == expected
+
+def test_request_cat_line_of_two_second():
+    cat = Cat("Felix")
+    cat2 = Cat("Garfield")
+    shelter = AnimalShelter()
+    shelter.enqueue(cat)
+    shelter.enqueue(cat2)
+    shelter.dequeue("cat")
+    actual = shelter.dequeue("cat").name
+    expected = "Garfield"
+    assert actual == expected
+
+def test_request_dog_line_of_two():
+    dog = Dog("Spot")
+    dog2 = Dog("Clifford")
+    shelter = AnimalShelter()
+    shelter.enqueue(dog)
+    shelter.enqueue(dog2)
+    actual = shelter.dequeue("dog").name
+    expected = "Spot"
+    assert actual == expected
+
+def test_request_snake():
+    cat = Cat("Felix")
+    shelter = AnimalShelter()
+    shelter.enqueue(cat)
+    actual = shelter.dequeue("snake")
+    expected = None
+    assert actual == expected
+
+def test_request_dog_empty():
+    dog = Dog("Spot")
+    dog2 = Dog("Clifford")
+    shelter = AnimalShelter()
+    shelter.enqueue(dog)
+    shelter.enqueue(dog2)
+    shelter.dequeue("dog")
+    shelter.dequeue("dog")
+    #context manager (aka bubble) to raise errors in to test them; otherwise seen as legit error.  Thanks Skyler!
+    with pytest.raises(InvalidOperationError):
+        shelter.dequeue("dog")
