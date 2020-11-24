@@ -93,3 +93,5 @@ class Node():
         self.value = value
         self.next_node = next_node
 
+    def __eq__(self, other):
+        return self.value == other.value and self.next_node == other.next_node
