@@ -14,7 +14,7 @@ Create a First In - First Out animal shelter making use of queues, classes, and 
 A class was defined for the shelter.  It contained methods for adding animals of either dog or cat class to the shelter.  The shelter returns users their preference of cat or dog based on a first in, first out approach.  Two seperate queues are used to keep the cats and dogs in order and to prevent any dogs from chasing the cats.  Both cats and dogs are a subclass of the animal class.  If a visitor requests an animal and does not provide a preference, they are given the animal that has been in the shelter the longest.
 
 ## Solution
-[Picture of Whiteboard Exercise](code_challenges/linked_list/Code_Challenge_12.png)
+[Picture of Whiteboard Exercise](code_challenges/Code_Challenge_12.png)
 
 -----------------------------------------------------------------
 
@@ -43,7 +43,7 @@ The PseudoQueue can both only be modified by its class methods.  The PseudoQueue
 - *peek*:  returns the value at the front of the queue
 
 ## Solution
-[Picture of Whiteboard Exercise](code_challenges/linked_list/Code_Challenge_11.png)
+[Picture of Whiteboard Exercise](code_challenges/Code_Challenge_11.png)
 
 -----------------------------------------------------------------
 
