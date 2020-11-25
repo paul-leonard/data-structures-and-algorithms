@@ -22,6 +22,14 @@ class AnimalShelter():
             return self.cat_queue.dequeue()
         elif request_type == "dog":
             return self.dog_queue.dequeue()
+        elif request_type == None:
+            #which queue is older?
+            next_cat = self.cat_queue.peek().animal_id
+            next_dog = self.dog_queue.peek().animal_id
+            if next_cat < next_dog:
+                return self.cat_queue.dequeue()
+            else:
+                return self.dog_queue.dequeue()
         else:
             return None
 

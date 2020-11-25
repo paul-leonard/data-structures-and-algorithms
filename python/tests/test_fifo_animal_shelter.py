@@ -106,3 +106,46 @@ def test_request_dog_empty():
     #context manager (aka bubble) to raise errors in to test them; otherwise seen as legit error.  Thanks Skyler!
     with pytest.raises(InvalidOperationError):
         shelter.dequeue("dog")
+
+def test_animal_id_counter_cat():
+    dog = Dog("Spot")
+    dog2 = Dog("Clifford")
+    cat = Cat("Felix")
+    cat2 = Cat("Garfield")
+    shelter = AnimalShelter()
+    shelter.enqueue(dog)
+    shelter.enqueue(dog2)
+    shelter.enqueue(cat)
+    shelter.enqueue(cat2)
+    actual = shelter.cat_queue.peek().animal_id
+    expected = 3
+    assert actual == expected
+
+def test_animal_id_counter_dog():
+    dog = Dog("Spot")
+    dog2 = Dog("Clifford")
+    cat = Cat("Felix")
+    cat2 = Cat("Garfield")
+    shelter = AnimalShelter()
+    shelter.enqueue(dog)
+    shelter.enqueue(dog2)
+    shelter.enqueue(cat)
+    shelter.enqueue(cat2)
+    actual = shelter.dog_queue.peek().animal_id
+    expected = 1
+    assert actual == expected
+
+def test_waiting_longer_animal():
+    dog = Dog("Spot")
+    dog2 = Dog("Clifford")
+    cat = Cat("Felix")
+    cat2 = Cat("Garfield")
+    shelter = AnimalShelter()
+    shelter.enqueue(dog)
+    shelter.enqueue(dog2)
+    shelter.enqueue(cat)
+    shelter.enqueue(cat2)
+    new_pet = shelter.dequeue()
+    actual = type(new_pet)
+    expected = Dog
+    assert actual == expected
