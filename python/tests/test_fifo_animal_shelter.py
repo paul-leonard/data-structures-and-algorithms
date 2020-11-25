@@ -1,3 +1,10 @@
+'''
+- [x] Required Tests:
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure
+- [x] Edge Case (if applicable/obvious)
+'''
+
 import pytest
 
 from code_challenges.fifo_animal_shelter.fifo_animal_shelter import Cat, Dog, Animal, AnimalShelter

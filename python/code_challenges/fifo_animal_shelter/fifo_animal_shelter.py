@@ -1,3 +1,15 @@
+'''
+Required Features:
+- [x] Create a class called AnimalShelter which holds only dogs and cats.
+- [x] The shelter operates using a first-in, first-out approach.
+- [x] Implement the following methods:
+- [x] enqueue(animal): adds animal to the shelter.
+- [x] animal can be either a dog or a cat object.
+- [x] dequeue(pref): returns either a dog or a cat.
+- [x] If pref is not "dog" or "cat" then return null.
+- [x] Stretch: If a cat or dog isn’t preferred, return whichever animal has been waiting in the shelter the longest.
+'''
+
 from stacks_and_queues.stacks_and_queues import Queue, InvalidOperationError
 
 class AnimalShelter():
@@ -8,6 +20,7 @@ class AnimalShelter():
 
     def enqueue(self, incoming_animal):
         type_of_animal = type(incoming_animal)
+        # https://docs.python.org/3/library/functions.html#type
         self.animals_served += 1
         incoming_animal.animal_id = self.animals_served
         if type_of_animal == Cat:

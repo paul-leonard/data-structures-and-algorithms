@@ -4,6 +4,20 @@
 
 -----------------------------------------------------------------
 
+# Animal Shelter (Code Challenge 12)
+Come get a new dog or cat at our First In - First Out Animal Shelter!
+
+## Challenge
+Create a First In - First Out animal shelter making use of queues, classes, and objects.  Handle cats and dogs seperately and see who has been there the longest.
+
+## Approach & Efficiency
+A class was defined for the shelter.  It contained methods for adding animals of either dog or cat class to the shelter.  The shelter returns users their preference of cat or dog based on a first in, first out approach.  Two seperate queues are used to keep the cats and dogs in order and to prevent any dogs from chasing the cats.  Both cats and dogs are a subclass of the animal class.  If a visitor requests an animal and does not provide a preference, they are given the animal that has been in the shelter the longest.
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/linked_list/Code_Challenge_12.png)
+
+-----------------------------------------------------------------
+
 # PseudoQueues Using Stacks (Code Challenge 11)
 Create a package defining classes for PseudoQueues to provide a structure for data, using Stacks and Nodes under the hood.
 
