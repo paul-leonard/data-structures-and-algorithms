@@ -1,5 +1,5 @@
 '''
-- [x] Required Tests:
+Required Tests:
 - [x] “Happy Path” - Expected outcome
 - [x] Expected failure
 - [x] Edge Case (if applicable/obvious)
