@@ -6,8 +6,8 @@ Challenge 16? (Binary Tree and BST Implementation) Required Features:
 - [ ] Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 
 - [x] Create a BinarySearchTree class
-- [ ] Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
-- [ ] Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+- [x] Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+- [x] Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 '''
 
 class InvalidOperationError(Exception):
@@ -26,7 +26,7 @@ class Node():
 
 class BinaryTree():
     '''
-    info
+    This class produces a binary tree with each node containing a left_node and a right_node, in addition to its value.  The contents of the Binary Tree can be printed out using one of three methods: preOrder, inOrder, or postOrder.
     '''
 
     def __init__(self, value=None):
@@ -51,7 +51,7 @@ class BinaryTree():
 
 class BinaryTreeSearch(BinaryTree):
     '''
-    info
+    This class creates a Binary Tree Search that is sorted for easy searching.  It uses the BinaryTree class as its base or superclass.  It has methods of add and contains.
     '''
 
     def add(self, value):

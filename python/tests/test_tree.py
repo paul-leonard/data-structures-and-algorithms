@@ -6,7 +6,8 @@ Challenge 16? (Binary Tree and BST Implementation) Required Testing Features:
 - [ ] Can successfully return a collection from a preorder traversal
 - [ ] Can successfully return a collection from an inorder traversal
 - [ ] Can successfully return a collection from a postorder traversal
-- [ ] can successfully confirm if a value is contained within a tree
+- [x] can successfully confirm that a value is contained within a tree
+- [x] can successfully confirm that a value is not contained within a tree
 '''
 
 import pytest
@@ -104,4 +105,43 @@ def test_not_contains():
     t.add(3)
     actual = t.contains(10)
     expected = False
+    assert actual == expected
+
+def test_preOrder():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    actual = t.preOrder()
+    expected = [5,4,3,9,7,6,14,]
+    assert actual == expected
+
+    def test_inOrder():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    actual = t.inOrder()
+    expected = [3,4,5,6,7,9,14,]
+    assert actual == expected
+
+    def test_postOrder():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    actual = t.postOrder()
+    expected = [3,4,6,7,14,9,]
     assert actual == expected
