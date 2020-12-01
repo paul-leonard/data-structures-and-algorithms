@@ -145,3 +145,9 @@ def test_postOrder():
     actual = t.postOrder()
     expected = [3,4,6,7,14,9,5,]
     assert actual == expected
+
+def test_postOrder_on_empty():
+    t = BinaryTreeSearch()
+    actual = t.postOrder()
+    expected = [None]
+    assert actual == expected
