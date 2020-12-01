@@ -3,9 +3,9 @@ Challenge 16? (Binary Tree and BST Implementation) Required Testing Features:
 - [x] Can successfully instantiate an empty tree
 - [x] Can successfully instantiate a tree with a single root node
 - [x] Can successfully add a left child and right child to a single root node
-- [ ] Can successfully return a collection from a preorder traversal
-- [ ] Can successfully return a collection from an inorder traversal
-- [ ] Can successfully return a collection from a postorder traversal
+- [x] Can successfully return a collection from a preorder traversal
+- [x] Can successfully return a collection from an inorder traversal
+- [x] Can successfully return a collection from a postorder traversal
 - [x] can successfully confirm that a value is contained within a tree
 - [x] can successfully confirm that a value is not contained within a tree
 '''
@@ -120,7 +120,7 @@ def test_preOrder():
     expected = [5,4,3,9,7,6,14,]
     assert actual == expected
 
-    def test_inOrder():
+def test_inOrder():
     t = BinaryTreeSearch()
     t.add(5)
     t.add(9)
@@ -133,7 +133,7 @@ def test_preOrder():
     expected = [3,4,5,6,7,9,14,]
     assert actual == expected
 
-    def test_postOrder():
+def test_postOrder():
     t = BinaryTreeSearch()
     t.add(5)
     t.add(9)
@@ -143,5 +143,5 @@ def test_preOrder():
     t.add(6)
     t.add(3)
     actual = t.postOrder()
-    expected = [3,4,6,7,14,9,]
+    expected = [3,4,6,7,14,9,5,]
     assert actual == expected

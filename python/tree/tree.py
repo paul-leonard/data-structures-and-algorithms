@@ -34,19 +34,52 @@ class BinaryTree():
 
     #depth first traversals
     def preOrder(self):
-        pass
-        # ordered_list = []
-        # return ordered_list
+        ordered_list = []
+
+        def walk(root):
+            ordered_list.append(root.value)
+
+            if root.left_node:
+                walk(root.left_node)
+
+            if root.right_node:
+                walk(root.right_node)
+
+        walk(self.root)
+
+        return ordered_list
 
     def inOrder(self):
-        pass
-        # ordered_list = []
-        # return ordered_list
+        ordered_list = []
+
+        def walk(root):
+            if root.left_node:
+                walk(root.left_node)
+
+            ordered_list.append(root.value)
+
+            if root.right_node:
+                walk(root.right_node)
+
+        walk(self.root)
+
+        return ordered_list
 
     def postOrder(self):
-        pass
-        # ordered_list = []
-        # return ordered_list
+        ordered_list = []
+
+        def walk(root):
+            if root.left_node:
+                walk(root.left_node)
+
+            if root.right_node:
+                walk(root.right_node)
+
+            ordered_list.append(root.value)
+
+        walk(self.root)
+
+        return ordered_list
 
 
 class BinaryTreeSearch(BinaryTree):
