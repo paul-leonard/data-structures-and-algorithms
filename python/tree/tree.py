@@ -55,19 +55,29 @@ class BinaryTreeSearch(BinaryTree):
     '''
 
     def add(self, value):
+        #create new node
         node = Node(value)
         #put it in the correct place
         if not self.root:
             self.root = node
-            print("path 1")
-        elif value < self.root.value:
-            self.root.left_node = node
-            print("path 2")
-        else:
-            self.root.right_node = node
-            print("path 3")
+            return
+
+        def walk_to_add(root):
+            if value < root.value:
+                if not root.left_node:
+                    root.left_node = node
+                else:
+                    walk_to_add(root.left_node)
+            else:
+                if not root.right_node:
+                    root.right_node = node
+                else:
+                    walk_to_add(root.right_node)
+
+        walk_to_add(self.root)
 
     def contains(self, value):
         # is the value in the tree?
+
         # return True/False
         pass
