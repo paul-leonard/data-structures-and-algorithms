@@ -64,9 +64,9 @@ def test_add_bigger_tree_down_low():
     expected = 7
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_add_without_primer_value():
     t = BinaryTreeSearch()
+    t.add(5)
     t.add(9)
     t.add(4)
     t.add(7)
@@ -76,7 +76,16 @@ def test_add_without_primer_value():
     expected = 9
     assert actual == expected
 
-@pytest.mark.skip("pending")
+def test_contains_at_top():
+    t = BinaryTreeSearch(5)
+    t.add(9)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    actual = t.contains(5)
+    expected = True
+    assert actual == expected
+
 def test_contains():
     t = BinaryTreeSearch(5)
     t.add(9)
@@ -87,7 +96,6 @@ def test_contains():
     expected = True
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_not_contains():
     t = BinaryTreeSearch(5)
     t.add(9)

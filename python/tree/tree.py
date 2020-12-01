@@ -57,12 +57,15 @@ class BinaryTreeSearch(BinaryTree):
     def add(self, value):
         #create new node
         node = Node(value)
+
         #put it in the correct place
-        if not self.root:
+        if not self.root or not self.root.value:
             self.root = node
             return
 
         def walk_to_add(root):
+            '''Method to add a new value as a new node within a binary search tree in the appropriate position'''
+
             if value < root.value:
                 if not root.left_node:
                     root.left_node = node
@@ -77,7 +80,22 @@ class BinaryTreeSearch(BinaryTree):
         walk_to_add(self.root)
 
     def contains(self, value):
-        # is the value in the tree?
+        '''Determines if a provided value exists within the BST'''
 
-        # return True/False
-        pass
+        def walk_to_find(root):
+            if root.value == value:
+                return True
+
+            if value < root.value:
+                if root.left_node:
+                    return walk_to_find(root.left_node)
+                else:
+                    return False
+            else:
+                if root.right_node:
+                    return walk_to_find(root.right_node)
+                else:
+                    return False
+
+        return walk_to_find(self.root)
+
