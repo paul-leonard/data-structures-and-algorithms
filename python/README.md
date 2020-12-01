@@ -2,8 +2,24 @@
 
 ## Language: `Python`
 
------------------------------------------------------------------
 
+-----------------------------------------------------------------
+# Max Numerical Value in Binary Tree (Code Challenge 17)
+Find the maximum numerical value in a binary tree.
+
+## Challenge
+Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Approach & Efficiency
+A method was added to the BinaryTree superclass to allow for finding the maximum value in a binary tree.  The method uses a helper function, which it defines, to check the current node value againist the current_maximum and then recursively call any left or right nodes that node contains.  If the value of that node is larger than the current_maximum, then the current_maximum is assigned the value of the current node.  A nonlocal variable is used within the helper function that is initially set equal to the tree.root.value.
+
+The process must step through each node, so the Big O with respect to time is O(n).  The data is not pulled from the binary tree, and only the current maximum is held in memory, so the Big O with respect to memory is O(1).  However, does it matter how large the recursive function call stack becomes when assessing Big O for memory?  If so, that would mean it is actually Big O(n).
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/Code_Challenge_17.png)
+
+
+-----------------------------------------------------------------
 # Animal Shelter (Code Challenge 12)
 Come get a new dog or cat at our First In - First Out Animal Shelter!
 

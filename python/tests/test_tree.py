@@ -8,6 +8,11 @@ Challenge 16? (Binary Tree and BST Implementation) Required Testing Features:
 - [x] Can successfully return a collection from a postorder traversal
 - [x] can successfully confirm that a value is contained within a tree
 - [x] can successfully confirm that a value is not contained within a tree
+
+Challenge 17? (Find max value in Binary Tree) Required Testing Features:
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure (non-identified)
+- [x] Edge Case
 '''
 
 import pytest
@@ -230,4 +235,17 @@ def test_find_max_in_non_bst_mid_branch():
     t.root.left_node.right_node.value = 18
     actual = t.find_maximum_value()
     expected = 18
+    assert actual == expected
+
+def test_find_max_in_bst_all_neg():
+    t = BinaryTreeSearch()
+    t.add(-5)
+    t.add(-9)
+    t.add(-4)
+    t.add(-14)
+    t.add(-7)
+    t.add(-6)
+    t.add(-3)
+    actual = t.find_maximum_value()
+    expected = -3
     assert actual == expected

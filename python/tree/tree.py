@@ -8,6 +8,9 @@ Challenge 16? (Binary Tree and BST Implementation) Required Features:
 - [x] Create a BinarySearchTree class
 - [x] Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 - [x] Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+
+Challenge 17? (Find max value in Binary Tree) Required Features:
+- [x] Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 '''
 
 class InvalidOperationError(Exception):
@@ -84,7 +87,7 @@ class BinaryTree():
 
     def find_maximum_value(self):
         '''
-        Finds maximum node value in a binary tree
+        Finds maximum numerical node value in a binary tree
         '''
 
         max_value_in_tree = self.root.value
