@@ -8,11 +8,19 @@ Challenge 16? (Binary Tree and BST Implementation) Required Testing Features:
 - [x] Can successfully return a collection from a postorder traversal
 - [x] can successfully confirm that a value is contained within a tree
 - [x] can successfully confirm that a value is not contained within a tree
+
+Challenge 17? (Find max value in Binary Tree) Required Testing Features:
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure (non-identified)
+- [x] Edge Case
 '''
 
 import pytest
 
 from tree.tree import Node, BinaryTree, BinaryTreeSearch
+
+
+# Code Challenge 17 Tests
 
 def test_connection():
     return Node()
@@ -150,4 +158,94 @@ def test_postOrder_on_empty():
     t = BinaryTreeSearch()
     actual = t.postOrder()
     expected = [None]
+    assert actual == expected
+
+# Code Challenge 17 Tests
+
+def test_find_max_in_bst():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    actual = t.find_maximum_value()
+    expected = 14
+    assert actual == expected
+
+def test_find_max_in_non_bst_left():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    t.add(2)
+    t.root.left_node.left_node.left_node.value = 16
+    actual = t.find_maximum_value()
+    expected = 16
+    assert actual == expected
+
+def test_find_max_in_non_bst_middle():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    t.add(2)
+    t.root.left_node.left_node.left_node.value = 16
+    t.add(4.5)
+    t.root.left_node.right_node.value = 20
+    actual = t.find_maximum_value()
+    expected = 20
+    assert actual == expected
+
+def test_find_max_in_non_bst_w_neg():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(22)
+    t.add(7)
+    t.add(6)
+    t.add(-3)
+    actual = t.find_maximum_value()
+    expected = 22
+    assert actual == expected
+
+def test_find_max_in_non_bst_mid_branch():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    t.add(2)
+    t.root.left_node.left_node.value = 18
+    t.add(4.5)
+    t.root.left_node.right_node.value = 18
+    actual = t.find_maximum_value()
+    expected = 18
+    assert actual == expected
+
+def test_find_max_in_bst_all_neg():
+    t = BinaryTreeSearch()
+    t.add(-5)
+    t.add(-9)
+    t.add(-4)
+    t.add(-14)
+    t.add(-7)
+    t.add(-6)
+    t.add(-3)
+    actual = t.find_maximum_value()
+    expected = -3
     assert actual == expected

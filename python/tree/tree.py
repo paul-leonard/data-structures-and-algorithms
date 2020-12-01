@@ -2,12 +2,15 @@
 Challenge 16? (Binary Tree and BST Implementation) Required Features:
 - [x] Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 - [x] Create a BinaryTree class
-- [ ] Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
-- [ ] Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+- [x] Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+- [x] Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 
 - [x] Create a BinarySearchTree class
 - [x] Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 - [x] Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+
+Challenge 17? (Find max value in Binary Tree) Required Features:
+- [x] Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 '''
 
 class InvalidOperationError(Exception):
@@ -37,6 +40,7 @@ class BinaryTree():
         ordered_list = []
 
         def walk(root):
+
             ordered_list.append(root.value)
 
             if root.left_node:
@@ -80,6 +84,29 @@ class BinaryTree():
         walk(self.root)
 
         return ordered_list
+
+    def find_maximum_value(self):
+        '''
+        Finds maximum numerical node value in a binary tree
+        '''
+
+        max_value_in_tree = self.root.value
+
+        def walk(root):
+            nonlocal max_value_in_tree
+
+            if root.value > max_value_in_tree:
+                max_value_in_tree = root.value
+
+            if root.left_node:
+                walk(root.left_node)
+
+            if root.right_node:
+                walk(root.right_node)
+
+        walk(self.root)
+
+        return max_value_in_tree
 
 
 class BinaryTreeSearch(BinaryTree):
