@@ -18,6 +18,8 @@ Challenge 18 (breadth first traversal) Required Features:
 - [ ] Return a list of the values in the tree in the order they were encountered.
 '''
 
+from stacks_and_queues.stacks_and_queues import Queue
+
 class InvalidOperationError(Exception):
     pass
 
@@ -92,9 +94,28 @@ class BinaryTree():
 
     #breadth first traversal
     def breadthOrder(self):
-        pass
+        '''
+        This method prints out the tree using a breadth-first approach that steps across the width of the tree before descending another level.
+        '''
+        ordered_list = []
 
+        # if not self.root:
+        #     return
 
+        tree_node_queue = Queue()
+        tree_node_queue.enqueue(self.root)
+
+        while not tree_node_queue.is_empty():
+            tree_node_removed_from_queue = tree_node_queue.dequeue()
+            ordered_list.append(tree_node_removed_from_queue.value)
+
+            if tree_node_removed_from_queue.left_node:
+                tree_node_queue.enqueue(tree_node_removed_from_queue.left_node)
+
+            if tree_node_removed_from_queue.right_node:
+                tree_node_queue.enqueue(tree_node_removed_from_queue.right_node)
+
+        return ordered_list
 
 
 
