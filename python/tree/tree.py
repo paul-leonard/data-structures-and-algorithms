@@ -11,6 +11,11 @@ Challenge 16? (Binary Tree and BST Implementation) Required Features:
 
 Challenge 17? (Find max value in Binary Tree) Required Features:
 - [x] Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+Challenge 18 (breadth first traversal) Required Features:
+- [ ] Write a breadth first traversal method which takes a Binary Tree as its unique input.
+- [ ] Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach
+- [ ] Return a list of the values in the tree in the order they were encountered.
 '''
 
 class InvalidOperationError(Exception):
@@ -84,6 +89,17 @@ class BinaryTree():
         walk(self.root)
 
         return ordered_list
+
+    #breadth first traversal
+    def breadthOrder(self):
+        pass
+
+
+
+
+
+
+
 
     def find_maximum_value(self):
         '''

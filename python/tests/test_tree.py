@@ -13,6 +13,11 @@ Challenge 17? (Find max value in Binary Tree) Required Testing Features:
 - [x] “Happy Path” - Expected outcome
 - [x] Expected failure (non-identified)
 - [x] Edge Case
+
+Challenge 18 (breadth first traversal) Required Testing Features:
+- [ ] “Happy Path” - Expected outcome
+- [ ] Expected failure (non-identified)
+- [ ] Edge Case
 '''
 
 import pytest
@@ -160,7 +165,7 @@ def test_postOrder_on_empty():
     expected = [None]
     assert actual == expected
 
-# Code Challenge 17 Tests
+# Code Challenge 17 Tests (find max method)
 
 def test_find_max_in_bst():
     t = BinaryTreeSearch()
@@ -248,4 +253,20 @@ def test_find_max_in_bst_all_neg():
     t.add(-3)
     actual = t.find_maximum_value()
     expected = -3
+    assert actual == expected
+
+
+# Code Challenge 18 Tests (breadth method)
+
+def test_breadthOrder():
+    t = BinaryTreeSearch()
+    t.add(5)
+    t.add(9)
+    t.add(4)
+    t.add(14)
+    t.add(7)
+    t.add(6)
+    t.add(3)
+    actual = t.breadthOrder()
+    expected = [5,4,9,3,7,14,6,]
     assert actual == expected
