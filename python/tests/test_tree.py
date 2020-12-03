@@ -15,9 +15,9 @@ Challenge 17? (Find max value in Binary Tree) Required Testing Features:
 - [x] Edge Case
 
 Challenge 18 (breadth first traversal) Required Testing Features:
-- [ ] “Happy Path” - Expected outcome
-- [ ] Expected failure (non-identified)
-- [ ] Edge Case
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure (non-identified)
+- [x] Edge Case
 '''
 
 import pytest
@@ -269,4 +269,10 @@ def test_breadthOrder():
     t.add(3)
     actual = t.breadthOrder()
     expected = [5,4,9,3,7,14,6,]
+    assert actual == expected
+
+def test_breadthOrder_empty():
+    t = BinaryTreeSearch()
+    actual = t.breadthOrder()
+    expected = [None]
     assert actual == expected

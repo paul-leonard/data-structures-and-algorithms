@@ -13,9 +13,9 @@ Challenge 17? (Find max value in Binary Tree) Required Features:
 - [x] Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
 Challenge 18 (breadth first traversal) Required Features:
-- [ ] Write a breadth first traversal method which takes a Binary Tree as its unique input.
-- [ ] Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach
-- [ ] Return a list of the values in the tree in the order they were encountered.
+- [x] Write a breadth first traversal method which takes a Binary Tree as its unique input.
+- [x] Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach
+- [x] Return a list of the values in the tree in the order they were encountered.
 '''
 
 from stacks_and_queues.stacks_and_queues import Queue
@@ -99,9 +99,6 @@ class BinaryTree():
         '''
         ordered_list = []
 
-        # if not self.root:
-        #     return
-
         tree_node_queue = Queue()
         tree_node_queue.enqueue(self.root)
 
@@ -116,11 +113,6 @@ class BinaryTree():
                 tree_node_queue.enqueue(tree_node_removed_from_queue.right_node)
 
         return ordered_list
-
-
-
-
-
 
     def find_maximum_value(self):
         '''

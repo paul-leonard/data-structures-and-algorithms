@@ -2,6 +2,22 @@
 
 ## Language: `Python`
 
+-----------------------------------------------------------------
+
+# Breadth-First Method for Binary Tree Class (Code Challenge 18)
+Produce a list of values stored in a binary tree in a breadth-first fashion.
+
+## Challenge
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
+## Approach & Efficiency
+A method was added to the BinaryTree class to print out the values stored in the tree in a breadth-first fashion.  A while loop and a Queue class data structure was used to provide the correct ordering of the node values.
+
+This simple approach lead to a Big O(n) for time since each node had to be visited.  With regards to memory, the Big O was O(w) since the queue would build up with nodes equal to the width of the tree before a tree node was dequeued from the queue.
+
+## Solution
+[Picture of Whiteboard Exercise](code_challenges/Code_Challenge_18.png)
+
 
 -----------------------------------------------------------------
 # Max Numerical Value in Binary Tree (Code Challenge 17)
@@ -13,7 +29,7 @@ Write an instance method called find-maximum-value. Without utilizing any of the
 ## Approach & Efficiency
 A method was added to the BinaryTree superclass to allow for finding the maximum value in a binary tree.  The method uses a helper function, which it defines, to check the current node value againist the current_maximum and then recursively call any left or right nodes that node contains.  If the value of that node is larger than the current_maximum, then the current_maximum is assigned the value of the current node.  A nonlocal variable is used within the helper function that is initially set equal to the tree.root.value.
 
-The process must step through each node, so the Big O with respect to time is O(n).  The data is not pulled from the binary tree, and only the current maximum is held in memory, so the Big O with respect to memory is O(1).  However, does it matter how large the recursive function call stack becomes when assessing Big O for memory?  If so, that would mean it is actually Big O(n).
+The process must step through each node, so the Big O with respect to time is O(n).  The data is not pulled from the binary tree, and only the current maximum is held in memory, so no new data structure is created.  However, the recursive calling of functions leads to a call stack that, at its max, becomes equal to the height of the tree.  Therefore, the Big O with respect to memory is O(h).
 
 ## Solution
 [Picture of Whiteboard Exercise](code_challenges/Code_Challenge_17.png)
