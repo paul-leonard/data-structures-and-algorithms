@@ -1,9 +1,10 @@
 '''
-
-
+Required Features:
+- [x] create a function which takes in an integer array and returns an array of the same values sorted ascendingly
 '''
 
 def insertionSort(integer_array):
+    ''' input: integer array;  output: integer array of the same values sorted ascendingly;  This function sorts an array in the order of increasing values. '''
     for i in range(len(integer_array)):
         min_index_so_far = i
 

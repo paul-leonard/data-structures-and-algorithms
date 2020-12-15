@@ -4,6 +4,27 @@
 
 -----------------------------------------------------------------
 
+# Insertion Sorting of Integer Array (Code Challenge 26)
+Write a function that sorts a given integer array in ascending order.
+
+## Challenge
+Given input of an integer array, output an integer array of the same values sorted ascendingly.
+
+## Approach & Efficiency
+The array is divided into two groups using a for statement.  The fist group is the sorted portion of the array and the second half is unsorted.  As the for loop increments, the sorted portion of the array grows in size while the unsorted portion shrinks. An inner for loop finds the minimum value of the unsorted portion of the array and moves it to be the last value in the sorted portion of the array.  The function then returns the sorted array.
+
+This approach requires a Big O(n^2) with regards to time because of the nested for loops running the full length of the array.  As for memory, the Big O is O(1) because the array is rearranged in place.
+
+## Solution
+[Blog Post Explanation](code_challenges/insertion_sort/BLOG)
+
+## Sources
+Sources:
+- [python range function](https://www.w3schools.com/python/ref_func_range.asp)
+
+
+-----------------------------------------------------------------
+
 # Breadth-First Method for Binary Tree Class (Code Challenge 18)
 Produce a list of values stored in a binary tree in a breadth-first fashion.
 
