@@ -10,9 +10,8 @@ import pytest
 from code_challenges.insertion_sort.insertion_sort import insertionSort
 
 def test_connection():
-    return insertionSort([3,6,4])
+    return insertionSort([3,2,4])
 
-@pytest.mark.skip("pending")
 def test_main_example():
     actual = insertionSort([8,4,23,42,16,15])
     expected = [4,8,15,16,23,42]
