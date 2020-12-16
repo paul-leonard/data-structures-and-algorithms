@@ -1,6 +1,6 @@
 '''
 Required Features:
-- [ ] create a function which takes in an integer array and returns an array of the same values sorted in ascending order using a "merge sort" algorithm
+- [x] create a function which takes in an integer array and returns an array of the same values sorted in ascending order using a "merge sort" algorithm
 '''
 
 def merge_sort(integer_array):
@@ -10,7 +10,7 @@ def merge_sort(integer_array):
 
     if n > 1:
         mid_index = n // 2
-        left = integer_array[0,mid_index]
+        left = integer_array[0:mid_index]
         right = integer_array[mid_index:]
 
         merge_sort(left)
@@ -40,5 +40,5 @@ def merge(left, right, integer_array):
     else:
         while l_index < len(left):
             integer_array[output_index] = left[l_index]
-            r_index += 1
+            l_index += 1
             output_index += 1
