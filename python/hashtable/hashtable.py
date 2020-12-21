@@ -18,30 +18,75 @@ class Hashtable():
     ?It has an attribute of ????.
     '''
 
-    def __init__(self, size):
-        self.size = size
-        # self.top = None
-        pass
+    def __init__(self, size=24):
+        self._size = size
+        self._buckets = size * [None]
 
 
     def add(self, key, value):
         ''' takes in both the key and value. This method should hash the key, and add   the key and value pair to the table, handling collisions as needed. '''
-        pass
+
+        hashed_index = self._hash(key)
+
+        if not self._buckets[hashed_index]:
+            self._buckets[hashed_index] = LinkedList()
+
+        self._buckets[hashed_index].insert((key,value))
+
+    def set(self, key, value):
+        ''' this method allows for the add method to get called by another common name '''
+        self.add(key,value)
 
 
     def get(self, key):
         ''' takes in the key and returns the value from the table. '''
-        #returns value
-        pass
+
+        hashed_index = self._hash(key)
+
+        linked_list_in_bucket = self._buckets[hashed_index]
+
+        if linked_list_in_bucket == None:
+            return None
+
+        current = linked_list_in_bucket.head
+        while current:
+            if current.value[0] == key:
+                return current.value[1]
+            current = current.next_node
 
 
     def contains(self, key):
         ''' takes in the key and returns a boolean, indicating if the key exists in     the table already. '''
+
+        #considered using
+    #       def includes(self, value):
+    # if self.head == None:
+    #   return False
+
+    # current = self.head
+    # while current.next_node != None:
+    #   current = current.next_node
+    #   if current.value == value:
+    #     return True
+
+    # return False
+
         #return boolean_key_in_table
         pass
 
 
-    def add(self, key):
+    def _hash(self, key):
         ''' takes in an arbitrary key and returns an index in the collection. '''
-        #return hased_index
-        pass
+
+        product = 1
+
+        for char in key:
+            product *= ord(char)
+
+        productplus = product + len(key)
+
+        primed = productplus * 19
+
+        hashed_index = primed % self._size
+
+        return hashed_index

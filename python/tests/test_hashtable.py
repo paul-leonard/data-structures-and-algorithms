@@ -16,31 +16,28 @@ import pytest
 from hashtable.hashtable import Hashtable
 
 def test_connection():
-    size = 64
+    size = 24
     actual = Hashtable(size)
     assert actual
 
-@pytest.mark.skip("pending")
 def test_add_and_get():
-    size = 64
+    size = 24
     table = Hashtable(size)
     table.add("key1","value1")
     actual = table.get("key1")
     expected = "value1"
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_key_not_found():
-    size = 64
+    size = 24
     table = Hashtable(size)
     table.add("key1","value1")
     actual = table.get("key2")
     expected = None
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_collision_add_and_get():
-    size = 64
+    size = 24
     table = Hashtable(size)
     table.add("key1","value1")
     table.add("yek1","value2")
@@ -51,11 +48,64 @@ def test_collision_add_and_get():
     assert actual1 == expected1
     assert actual2 == expected2
 
-@pytest.mark.skip("pending")
 def test_hash_in_range():
-    size = 64
+    size = 24
     table = Hashtable(size)
-    returned_hash_index = table.hash("key1")
+    returned_hash_index = table._hash("key1")
     assert type(returned_hash_index) == int
-    assert returned_hash_index <= size
-    assert returned_hash_index >= 0
+    assert 0 <= returned_hash_index < size
+
+
+# JB supplied tests below.  Paul original ones above.
+
+def test_create():
+    hashtable = Hashtable()
+    assert hashtable
+
+
+def test_predictable_hash():
+    hashtable = Hashtable()
+    initial = hashtable._hash('spam')
+    secondary = hashtable._hash('spam')
+    assert initial == secondary
+
+
+def test_in_range_hash():
+    hashtable = Hashtable()
+    actual = hashtable._hash('spam')
+
+    # assert actual >= 0
+    # assert actual < hashtable._size
+
+    assert 0 <= actual < hashtable._size
+
+
+def test_same_hash():
+    hashtable = Hashtable()
+    initial = hashtable._hash('listen')
+    secondary = hashtable._hash('silent')
+    assert initial == secondary
+
+
+def test_different_hash():
+    hashtable = Hashtable()
+    initial = hashtable._hash('glisten')
+    secondary = hashtable._hash('silent')
+    assert initial != secondary
+
+
+def test_get_apple():
+    hashtable = Hashtable()
+    hashtable.set("apple", "Used for apple sauce")
+    actual = hashtable.get("apple")
+    expected = "Used for apple sauce"
+    assert actual == expected
+
+
+def test_get_silent_and_listen():
+    hashtable = Hashtable()
+    hashtable.set('listen','to me')
+    hashtable.set('silent','so quiet')
+
+    assert hashtable.get('listen') == 'to me'
+    assert hashtable.get('silent') == 'so quiet'

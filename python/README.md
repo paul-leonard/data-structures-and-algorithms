@@ -20,7 +20,10 @@ This approach has a time complexity of O(nlog(n)) which is better than the inser
 [whiteboard](???)
 
 ## Sources
+- some tests were supplied by JB
 - [skipping pytests](https://docs.pytest.org/en/latest/skipping.html)
+- [ord function](https://www.geeksforgeeks.org/ord-function-python/)
+
 
 
 -----------------------------------------------------------------
