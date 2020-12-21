@@ -4,7 +4,31 @@
 
 -----------------------------------------------------------------
 
-# Merge Sorting of Integer Array (Code Challenge 27)
+# Quick Sorting of Integer List (Code Challenge 28)
+Write a function that sorts a given integer array in ascending order.
+
+## Challenge
+Given input of an integer array, the left index value, and the right index value, output an integer array of the same values sorted in ascending order through the use of a quick sort algorithm.
+
+## Approach & Efficiency
+A set of recursive functions are used to select a pivot value and compare each other value in the list againist it.  Repeated swapping of values occurs until all values that are less than the pivot value are placed to the left of the pivot value.  Also, any value greater than the pivot value is placed to the right of the pivot value.
+
+This approach has a time complexity of O(nlog(n)) which is better than the insertion sort algorithm.  As for memory, the Big O is considered O(1) because the array is sorted in-place.  However, techinically it is O(log^2(n)) because of recursive function calls.
+
+## Solution
+[Blog Post Explanation](code_challenges/quick_sort/BLOG)
+[whiteboard](code_challenges/quick_sort/quick_sort_whiteboard.png)
+
+## Sources
+- Thanks to Ryan P. for our collaborative work on the whiteboard.
+- [baseCS QuickSort Part 1](https://medium.com/basecs/pivoting-to-understand-quicksort-part-1-75178dfb9313)
+- [baseCS QuickSort Part 2](https://medium.com/basecs/pivoting-to-understand-quicksort-part-2-30161aefe1d3)
+- [Visualization of Quick Sort](https://www.youtube.com/watch?v=vxENKlcs2Tw)
+- [GeeksForGeeks Quick Sort](https://www.geeksforgeeks.org/python-program-for-quicksort/)
+
+-----------------------------------------------------------------
+
+# Merge Sorting of Integer List (Code Challenge 27)
 Write a function that sorts a given integer array in ascending order.
 
 ## Challenge
@@ -26,7 +50,7 @@ This approach has a time complexity of O(nlog(n)) which is better than the inser
 
 -----------------------------------------------------------------
 
-# Insertion Sorting of Integer Array (Code Challenge 26)
+# Insertion Sorting of Integer List (Code Challenge 26)
 Write a function that sorts a given integer array in ascending order.
 
 ## Challenge
