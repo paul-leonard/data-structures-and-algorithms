@@ -1,10 +1,10 @@
 '''
 Required Features:
-- [ ] create hashtable class
-- [ ] add: takes in both the key and value. This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
-- [ ] get: takes in the key and returns the value from the table.
-- [ ] contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
-- [ ] hash: takes in an arbitrary key and returns an index in the collection.
+- [x] create hashtable class
+- [x] add: takes in both the key and value. This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
+- [x] get: takes in the key and returns the value from the table.
+- [x] contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
+- [x] hash: takes in an arbitrary key and returns an index in the collection.
 '''
 
 from code_challenges.linked_list.linked_list.linked_list import LinkedList
@@ -56,23 +56,22 @@ class Hashtable():
 
 
     def contains(self, key):
-        ''' takes in the key and returns a boolean, indicating if the key exists in     the table already. '''
+        ''' takes in the key and returns a boolean, indicating if the key exists in the table already. '''
 
-        #considered using
-    #       def includes(self, value):
-    # if self.head == None:
-    #   return False
+        hashed_index = self._hash(key)
 
-    # current = self.head
-    # while current.next_node != None:
-    #   current = current.next_node
-    #   if current.value == value:
-    #     return True
+        linked_list_in_bucket = self._buckets[hashed_index]
 
-    # return False
+        if linked_list_in_bucket == None:
+            return False
 
-        #return boolean_key_in_table
-        pass
+        current = linked_list_in_bucket.head
+        while current:
+            if current.value[0] == key:
+                return True
+            current = current.next_node
+
+        return False
 
 
     def _hash(self, key):

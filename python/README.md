@@ -9,21 +9,22 @@
 Create a class for Hashtable that contains the methods of add, get, contains, and hash.
 
 ## Challenge
-<!-- Given input of an integer array, the left index value, and the right index value, output an integer array of the same values sorted in ascending order through the use of a quick sort algorithm. -->
+Implement a Hashtable with the following methods:
+1. add: takes in both the key and value. This method should hash the key, and add the key and 1. value pair to the table, handling collisions as needed.
+1. get: takes in the key and returns the value from the table.
+1. contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
+1. hash: takes in an arbitrary key and returns an index in the collection.
+
 
 ## Approach & Efficiency
-<!-- A set of recursive functions are used to select a pivot value and compare each other value in the list againist it.  Repeated swapping of values occurs until all values that are less than the pivot value are placed to the left of the pivot value.  Also, any value greater than the pivot value is placed to the right of the pivot value.
+A new class data structure is defined called Hashtable which stores data in an array.  An instance can be created with or without a size argument.  Key value pairs can be added to the Hashtable by calling the add or set method with arguments of the key/value pair.  The _hash method is then used to determine the array index where the key/value pair will be stored.  To account for proper operation during collisions at a given array index, a LinkedList is used.  Each LinkedList Node Value contains a tuple of the key/value pair being stored in the Hashtable.
 
-This approach has a time complexity of O(nlog(n)) which is better than the insertion sort algorithm.  As for memory, the Big O is considered O(1) because the array is sorted in-place.  However, techinically it is O(log^2(n)) because of recursive function calls. -->
-
-## Solution
-[whiteboard](???)
+This approach has a time complexity of O(1) due the fast look up times for a given array (list) index.  The hash method allows for the add, set, and get methods to all know which index of the array to access.  As for memory, the Big O is O(n) because space is needed for the key/value pairs that are to be stored in the Hashtable.
 
 ## Sources
 - some tests were supplied by JB
 - [skipping pytests](https://docs.pytest.org/en/latest/skipping.html)
 - [ord function](https://www.geeksforgeeks.org/ord-function-python/)
-
 
 
 -----------------------------------------------------------------
