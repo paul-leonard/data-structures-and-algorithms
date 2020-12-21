@@ -18,29 +18,30 @@ class Hashtable():
     ?It has an attribute of ????.
     '''
 
-    def __init__(self):
+    def __init__(self, size):
+        self.size = size
         # self.top = None
         pass
 
 
-    def add(key, value):
+    def add(self, key, value):
         ''' takes in both the key and value. This method should hash the key, and add   the key and value pair to the table, handling collisions as needed. '''
         pass
 
 
-    def get(key):
+    def get(self, key):
         ''' takes in the key and returns the value from the table. '''
         #returns value
         pass
 
 
-    def contains(key):
+    def contains(self, key):
         ''' takes in the key and returns a boolean, indicating if the key exists in     the table already. '''
         #return boolean_key_in_table
         pass
 
 
-    def add(key):
+    def add(self, key):
         ''' takes in an arbitrary key and returns an index in the collection. '''
         #return hased_index
         pass

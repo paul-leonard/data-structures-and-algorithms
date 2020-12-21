@@ -16,5 +16,46 @@ import pytest
 from hashtable.hashtable import Hashtable
 
 def test_connection():
-    actual = Hashtable()
+    size = 64
+    actual = Hashtable(size)
     assert actual
+
+@pytest.mark.skip("pending")
+def test_add_and_get():
+    size = 64
+    table = Hashtable(size)
+    table.add("key1","value1")
+    actual = table.get("key1")
+    expected = "value1"
+    assert actual == expected
+
+@pytest.mark.skip("pending")
+def test_key_not_found():
+    size = 64
+    table = Hashtable(size)
+    table.add("key1","value1")
+    actual = table.get("key2")
+    expected = None
+    assert actual == expected
+
+@pytest.mark.skip("pending")
+def test_collision_add_and_get():
+    size = 64
+    table = Hashtable(size)
+    table.add("key1","value1")
+    table.add("yek1","value2")
+    actual1 = table.get("key1")
+    actual2 = table.get("yek1")
+    expected1 = "value1"
+    expected2 = "value2"
+    assert actual1 == expected1
+    assert actual2 == expected2
+
+@pytest.mark.skip("pending")
+def test_hash_in_range():
+    size = 64
+    table = Hashtable(size)
+    returned_hash_index = table.hash("key1")
+    assert type(returned_hash_index) == int
+    assert returned_hash_index <= size
+    assert returned_hash_index >= 0
