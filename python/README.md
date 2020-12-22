@@ -5,6 +5,26 @@
 
 -----------------------------------------------------------------
 
+# Repeated Word (Code Challenge 31)
+Find the first repeated word in a book.
+
+## Challenge
+- Write a function that accepts a lengthy string parameter.
+- Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+
+## Approach & Efficiency
+A Hashtable will be used to store each word identified in the string provided as the argument.  The key/value pair comprises of the word and the count of occurrences.
+
+Because the algorithm must operate and use the hashtable for each word in the string length, and store the releated data, both the time and memory complexity is Big O(n).
+
+## Sources
+- some tests were supplied by the assignement
+- Thanks to Alex for idea of `.punctuation`
+
+
+-----------------------------------------------------------------
+
+
 # Hashtable Data Structure (Code Challenge 30)
 Create a class for Hashtable that contains the methods of add, get, contains, and hash.
 
