@@ -5,6 +5,30 @@
 
 -----------------------------------------------------------------
 
+# Tree Intersection (Code Challenge 32)
+Given two binary trees, find values that occur in both trees and return them in a list.
+
+## Challenge
+- Write a function called tree_intersection that takes two binary tree parameters.
+- Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
+
+## Approach & Efficiency
+A Hashtable will be used to store each tree node value of BinaryTree1.  The second binary tree, BinaryTree2, will be traversed and at each node the Hashtable will be checked to see if contains that node's value.  If the value is a key in the Hashtable, the value will be added to a set called "repeats".  The "repeats" set will then be converted to a list and returned.
+
+Because the algorithm must operate and use the hashtable for each binary tree node, both the time and memory complexity is Big O(n).
+
+## Solution
+[whiteboard with chosen Hashtable solution](code_challenges/tree_intersection/tree_intersection_wb_with_n_hash.png)
+[whiteboard with discarded discussed tree.contains solution](code_challenges/tree_intersection/tree_intersection_wb_with_n2.png)
+
+## Sources
+- [convert set to list](https://www.geeksforgeeks.org/python-convert-set-into-a-list/)
+- [python sets](https://www.w3schools.com/python/python_sets.asp)
+
+
+
+-----------------------------------------------------------------
+
 # Repeated Word (Code Challenge 31)
 Find the first repeated word in a book.
 
