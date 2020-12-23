@@ -6,6 +6,7 @@ Required Features:
 
 from tree.tree import BinaryTree
 from hashtable.hashtable import Hashtable
+from code_challenges.merge_sort.merge_sort import merge_sort
 
 def tree_intersection(binarytree1, binarytree2):
 
@@ -47,4 +48,4 @@ def tree_intersection(binarytree1, binarytree2):
 
     repeats = find_common_values(bt_hashtable, binarytree2)
 
-    return list(repeats)
+    return merge_sort(list(repeats))

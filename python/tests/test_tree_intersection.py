@@ -54,7 +54,6 @@ def test_one_duplicate():
     expected = [3]
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_three_duplicates():
     binarytree1, binarytree2 = BinaryTreeSearch(), BinaryTreeSearch()
     binarytree1.add(3)
@@ -69,7 +68,6 @@ def test_three_duplicates():
     expected = [3, 11, 31]
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_same_abs_value():
     binarytree1, binarytree2 = BinaryTreeSearch(), BinaryTreeSearch()
     binarytree1.add(3)
@@ -84,9 +82,8 @@ def test_same_abs_value():
     expected = [3]
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_two_negitive_duplicates():
-    binarytree1, binarytree2 = BinaryTree(), BinaryTree()
+    binarytree1, binarytree2 = BinaryTreeSearch(), BinaryTreeSearch()
     binarytree1.add(3)
     binarytree1.add(5)
     binarytree1.add(-31)
@@ -96,7 +93,7 @@ def test_two_negitive_duplicates():
     binarytree2.add(-11)
     binarytree2.add(-31)
     actual = tree_intersection(binarytree1, binarytree2)
-    expected = [3, -11, -31]
+    expected = [-31, -11, 3]
     assert actual == expected
 
 @pytest.mark.skip("pending")
@@ -113,7 +110,6 @@ def test_two_duplicate_strings():
     expected = ["cat","dog"]
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_provided_example_test():
     binarytree1, binarytree2 = BinaryTreeSearch(), BinaryTreeSearch()
     binarytree1.add(150)
@@ -139,5 +135,5 @@ def test_provided_example_test():
     binarytree2.add(4)
     binarytree2.add(500)
     actual = tree_intersection(binarytree1, binarytree2)
-    expected = [100,160,125,175,200,350,500]
+    expected = [100,125,160,175,200,350,500]
     assert actual == expected

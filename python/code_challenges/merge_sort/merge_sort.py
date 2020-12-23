@@ -17,6 +17,8 @@ def merge_sort(integer_array):
         merge_sort(right)
         merge(left, right, integer_array)
 
+    return integer_array
+
 def merge(left, right, integer_array):
     l_index = 0
     r_index = 0
