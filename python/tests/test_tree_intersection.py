@@ -1,8 +1,9 @@
 '''
 Required Tests:
-- [ ] “Happy Path” - Expected outcome
-- [ ] Expected failure
-- [ ] Edge Case (if applicable/obvious)
+- [x] “Happy Path” - Expected outcome
+- [x] Expected failure
+- [x] Edge Case (if applicable/obvious)
+- [ ] identify duplicate strings in trees
 '''
 
 import pytest
