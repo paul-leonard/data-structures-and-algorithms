@@ -18,14 +18,14 @@ def test_connection():
 def test_two_empty_trees():
     binarytree1, binarytree2 = BinaryTree(), BinaryTree()
     actual = tree_intersection(binarytree1, binarytree2)
-    expected = None
+    expected = []
     assert actual == expected
 
 def test_one_empty_tree():
     binarytree1, binarytree2 = BinaryTree(), BinaryTreeSearch()
     binarytree2.add(3)
     actual = tree_intersection(binarytree1, binarytree2)
-    expected = None
+    expected = []
     assert actual == expected
 
 def test_no_duplicates():
@@ -38,10 +38,9 @@ def test_no_duplicates():
     binarytree2.add(11)
     binarytree2.add(31)
     actual = tree_intersection(binarytree1, binarytree2)
-    expected = None
+    expected = []
     assert actual == expected
 
-@pytest.mark.skip("pending")
 def test_one_duplicate():
     binarytree1, binarytree2 = BinaryTreeSearch(), BinaryTreeSearch()
     binarytree1.add(3)

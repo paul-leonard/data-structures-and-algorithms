@@ -24,6 +24,8 @@ Because the algorithm must operate and use the hashtable for each binary tree no
 ## Sources
 - [convert set to list](https://www.geeksforgeeks.org/python-convert-set-into-a-list/)
 - [python sets](https://www.w3schools.com/python/python_sets.asp)
+- [add to set](https://www.geeksforgeeks.org/set-add-python/)
+- [empty set](https://www.w3resource.com/python-exercises/sets/python-sets-exercise-1.php)
 
 
 
