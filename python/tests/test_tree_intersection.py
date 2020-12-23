@@ -3,13 +3,12 @@ Required Tests:
 - [x] “Happy Path” - Expected outcome
 - [x] Expected failure
 - [x] Edge Case (if applicable/obvious)
-- [ ] identify duplicate strings in trees
+- [ ] identify duplicate strings in trees (optional)
 '''
 
 import pytest
 
 from code_challenges.tree_intersection.tree_intersection import tree_intersection
-from hashtable.hashtable import Hashtable
 from tree.tree import BinaryTree, BinaryTreeSearch, Node
 
 def test_connection():
