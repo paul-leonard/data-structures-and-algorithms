@@ -2,6 +2,28 @@
 
 ## Language: `Python`
 
+-----------------------------------------------------------------
+
+# Left Join Two Hashtables (Code Challenge 33)
+Given two hashtables, return an array of arrays resulting from a left join of the two tables.
+
+## Challenge
+- Write a function that LEFT JOINs two hashmaps into a single data structure.
+- The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+- The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+- Combine the key and corresponding values (if they exist) into a new data structure according to LEFT JOIN logic.
+- LEFT JOIN means all the values in the first hashmap are returned, and if values exist in the “right” hashmap, they are appended to the result row. If no values exist in the right hashmap, then some flavor of NULL should be appended to the result row.
+- The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic.
+- Avoid utilizing any of the library methods available to your language.
+
+## Approach & Efficiency
+The first hashtable is iterated through using its "buckets" array. Each key/value pair found is then stored in a new list.  Each key listed in the new array is then looked up in the second hashtable.  If the second hashtable contains a word for that key, that word is appended to the list.  If the second table does not contain a word under that key, then None is appended to the array.
+
+Because the algorithm must iterate through every value in the first hashtable and create a new data structure that is of equal size, both the time and memory complexity is Big O(n).
+
+## Solution
+[whiteboard](code_challenges/left_join/left_join_hashtables_wb.png)
+
 
 -----------------------------------------------------------------
 
@@ -26,7 +48,6 @@ Because the algorithm must operate and use the hashtable for each binary tree no
 - [python sets](https://www.w3schools.com/python/python_sets.asp)
 - [add to set](https://www.geeksforgeeks.org/set-add-python/)
 - [empty set](https://www.w3resource.com/python-exercises/sets/python-sets-exercise-1.php)
-
 
 
 -----------------------------------------------------------------
