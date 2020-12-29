@@ -13,4 +13,23 @@ def multi_bracket_validation(input):
     Input: string  Output: boolean stating True if brackets are balanced in the input string
     '''
 
-    pass
+    bracket_tower = Stack()
+
+    for char in input:
+        if char in ['(','[','{']:
+            bracket_tower.push(char)
+        elif char in [')',']','}']:
+            if bracket_tower.is_empty():
+                return False
+            removed_char = bracket_tower.pop()
+
+            if char == ')' and removed_char != '(':
+                return False
+            elif char == ']'and removed_char != '[':
+                return False
+            elif char == '}' and removed_char != '{':
+                return False
+
+    if bracket_tower.is_empty():
+        return True
+    return False
