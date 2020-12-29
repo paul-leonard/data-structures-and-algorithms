@@ -2,6 +2,27 @@
 
 ## Language: `Python`
 
+
+-----------------------------------------------------------------
+
+# Multi-bracket Validation (Code Challenge 37)
+Given a string, determine if the usuage of brackets, including (), [], and {}, is balanced and nested appropriately.  If usuage is acceptable, return True.  If not, return False.
+
+## Challenge
+Your function should take a string as its only argument, and should return a boolean representing whether or not the brackets in the string are balanced. There are 3 types of brackets:
+- Round Brackets : ()
+- Square Brackets : []
+- Curly Brackets : {}
+
+## Approach & Efficiency
+The input string is iterated through one character at a time.  If an open bracket is identified, that bracket is added to a Stack.  If an closed bracket is identified, the Stack is checked to see if it is empty.  If the Stack is empty, then the bracket pair was never opened and False is returned.  If the Stack contained a top, the top of the Stack is popped off.  If the character removed from the stack is not the opening matching bracket to the current closing bracket, then the function returns False.  The function also ensures that the stack is empty after iterating through the string to ensure all brackets were closed.
+
+Overall, the Big O for this function is O(n) for both time and space.  The algorithm must iterate through every character in the input string which will take time O(n).  Some additional Stack operations are performed including pushing, popping, and is_empty which all take O(1) and drop off of our estimates.  As for memory/space considerations, each character that is a bracket in the input string is stored in a stack.  If all of the characters are brackets, then O(n) space is required.  There is some additional overhead for space, but overall estimate results in O(n).
+
+## Solution
+[whiteboard](code_challenges/multi_bracket_validation/code_chal_37_bracket_valid.png)
+
+
 -----------------------------------------------------------------
 
 # Left Join Two Hashtables (Code Challenge 33)
