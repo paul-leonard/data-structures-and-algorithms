@@ -2,6 +2,33 @@
 
 ## Language: `Python`
 
+-----------------------------------------------------------------
+
+
+# Pascal's Triangle (Code Challenge 38)
+Generate a Pascal's Triangle of height, n.
+
+## Challenge
+The rows continue on forever. Assuming that row N = 1 corresponds to that first row, [1], write a function that takes in N as a value and prints the first N rows of Pascal’s Triangle.
+
+## Approach & Efficiency
+- Knowing what the values of hte previous row of the Pascal's Triangle are, it is simple to calculate the next lower row by adding two of the values together
+- Develop one function that iterates over every row of the triangle that is needed
+- Develop a second function that calculates values for a new row when provided the row above it.
+- This approach results in a Big O of O(n^2) for both time and space complexity.
+
+## Solution
+[Picture of Whiteboard](code_challenges/pascals_triangle/code_chal_38_pascals.png)
+
+## Tests
+- The function was manually called with several inputs including all of the edge cases.  The visual table returned was manually inspected for accuracy and spacing.  Working appropriately.
+
+## Sources and Credit
+- [Geeks for Geeks: Pascal's Triangle](https://www.geeksforgeeks.org/pascal-triangle/)
+- [center python string](https://www.programiz.com/python-programming/methods/string/center)
+- [print lists with spaces](https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/)
+- Worked with Lee Thomas and Robert Radford
+
 
 -----------------------------------------------------------------
 # Max Numerical Value in Binary Tree (Code Challenge 17)
@@ -20,6 +47,7 @@ The process must step through each node, so the Big O with respect to time is O(
 
 
 -----------------------------------------------------------------
+
 # Animal Shelter (Code Challenge 12)
 Come get a new dog or cat at our First In - First Out Animal Shelter!
 
