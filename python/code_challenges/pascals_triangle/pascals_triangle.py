@@ -1,6 +1,6 @@
 '''
 Required Features:
-- [ ] The rows continue on forever. Assuming that row N = 1 corresponds to that first row, [1], write a function that takes in N as a value and prints the first N rows of Pascal’s Triangle.
+- [x] The rows continue on forever. Assuming that row N = 1 corresponds to that first row, [1], write a function that takes in N as a value and prints the first N rows of Pascal’s Triangle.
 '''
 
 def create_pascals_triangle(n):
