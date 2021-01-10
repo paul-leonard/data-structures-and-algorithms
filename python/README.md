@@ -4,6 +4,48 @@
 
 -----------------------------------------------------------------
 
+# Merge Sorting of Integer Array (Code Challenge 27)
+Write a function that sorts a given integer array in ascending order.
+
+## Challenge
+Given input of an integer array, output an integer array of the same values sorted in ascending order through the use of a merge sort algorithm.
+
+## Approach & Efficiency
+A recursive function is used to divide each integer array argument in half and then merge them back together in a sorted fashion.  Each half of an array is then divided in half again when the same function is recursively called on it.
+
+This approach has a time complexity of O(nlog(n)) which is better than the insertion sort algorithm.  As for memory, the Big O is O(n) because the array is temporarily stored in out-of-place memory.
+
+## Solution
+[Blog Post Explanation](code_challenges/merge_sort/BLOG)
+
+## Sources
+- Thanks to Mark Bell for our collaborative work on the whiteboard and troubleshooting issues.
+- [basecs merge sort part 1](https://medium.com/basecs/making-sense-of-merge-sort-part-1-49649a143478)
+- [basecs merge sort part 2](https://medium.com/basecs/making-sense-of-merge-sort-part-2-be8706453209)
+
+
+-----------------------------------------------------------------
+
+# Insertion Sorting of Integer Array (Code Challenge 26)
+Write a function that sorts a given integer array in ascending order.
+
+## Challenge
+Given input of an integer array, output an integer array of the same values sorted in ascending order through the use of an insertion sort algorithm.
+
+## Approach & Efficiency
+The array is divided into two groups using a for statement.  The fist group is the sorted portion of the array and the second half is unsorted.  As the for loop increments, the sorted portion of the array grows in size while the unsorted portion shrinks. An inner for loop finds the minimum value of the unsorted portion of the array and moves it to be the last value in the sorted portion of the array.  The function then returns the sorted array.
+
+This approach requires a Big O(n^2) with regards to time because of the nested for loops running the full length of the array.  As for memory, the Big O is O(1) because the array is rearranged in place.
+
+## Solution
+[Blog Post Explanation](code_challenges/insertion_sort/BLOG)
+
+## Sources
+- [python range function](https://www.w3schools.com/python/ref_func_range.asp)
+
+
+-----------------------------------------------------------------
+
 # Breadth-First Method for Binary Tree Class (Code Challenge 18)
 Produce a list of values stored in a binary tree in a breadth-first fashion.
 
