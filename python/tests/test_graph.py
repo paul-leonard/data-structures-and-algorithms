@@ -46,20 +46,14 @@ def test_add_edge_sunny():
     #   pytest.fail("KeyError should not be thrown")
 
 
-@pytest.mark.skip("pending")
 def test_add_edge_with_weight():
-
     graph = Graph()
-
     start = graph.add_node("start")
-
     end = graph.add_node("end")
-
     weight = 10
-
     graph.add_edge(start, end, weight)
 
-@pytest.mark.skip("pending")
+
 def test_add_edge_interloper_start():
 
     graph = Graph()
@@ -71,31 +65,22 @@ def test_add_edge_interloper_start():
     with pytest.raises(KeyError):
         graph.add_edge(start, end)
 
+
 @pytest.mark.skip("pending")
 def test_add_edge_interloper_end():
-
     graph = Graph()
-
     end = Vertex("end")
-
     start = graph.add_node("start")
-
     with pytest.raises(KeyError):
         graph.add_edge(start, end)
 
-@pytest.mark.skip("pending")
+
 def test_get_nodes():
-
     graph = Graph()
-
     graph.add_node("banana")
-
     graph.add_node("apple")
-
     expected = 2
-
     actual = len(graph.get_nodes())
-
     assert actual == expected
 
 
@@ -168,44 +153,27 @@ def test_get_neighbors_returns_edges_with_custom_weight():
 
     assert neighbor_edge.weight == 44
 
-@pytest.mark.skip("pending")
 def test_size_empty():
-
     graph = Graph()
-
     expected = 0
-
     actual = graph.size()
-
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
 def test_size_one():
-
     graph = Graph()
-
     graph.add_node("spam")
-
     expected = 1
-
     actual = graph.size()
-
     assert actual == expected
 
-@pytest.mark.skip("pending")
+
 def test_size_two():
-
     graph = Graph()
-
     graph.add_node("spam")
-
     graph.add_node("bacon")
-
     expected = 2
-
     actual = graph.size()
-
     assert actual == expected
 
 #####################################

@@ -28,14 +28,27 @@ Required Features:
 
 class Graph():
     def __init__(self):
-        pass
+        self._adjacency_list = {}
 
     def add_node(self, value):
         vertex = Vertex(value)
+        self._adjacency_list[vertex] = []
         return vertex
-    def add_edge(self, start, end, weight=None):
-        edge = Edge(start, end, weight)
+
+    def add_edge(self, start_vertex, end_vertex, weight=None):
+        if start_vertex not in self._adjacency_list:
+            raise KeyError("Start Vertex not in graph")
+        if end_vertex not in self._adjacency_list:
+            raise KeyError("End Vertex not in graph")
+
+        edge = Edge(start_vertex, end_vertex, weight)
         return edge
+
+    def get_nodes(self):
+        return self._adjacency_list.keys()
+
+    def size(self):
+        return len(self._adjacency_list)
 
 
 class Vertex():
@@ -43,5 +56,7 @@ class Vertex():
         self.value = value
 
 class Edge():
-    def __init__(self, start, end, weight=None):
+    def __init__(self, start_vertex, end_vertex, weight=None):
         self.weight = weight
+
+
