@@ -1,18 +1,17 @@
 '''
 Required Testing Features:
-- [ ] Node can be successfully added to the graph
-- [ ] An edge can be successfully added to the graph
-- [ ] A collection of all nodes can be properly retrieved from the graph
-- [ ] All appropriate neighbors can be retrieved from the graph
-- [ ] Neighbors are returned with the weight between nodes included
-- [ ] The proper size is returned, representing the number of nodes in the graph
-- [ ] A graph with only one node and edge can be properly returned
+- [x] Node can be successfully added to the graph
+- [x] An edge can be successfully added to the graph
+- [x] A collection of all nodes can be properly retrieved from the graph
+- [x] All appropriate neighbors can be retrieved from the graph
+- [x] Neighbors are returned with the weight between nodes included
+- [x] The proper size is returned, representing the number of nodes in the graph
+- [x] A graph with only one node and edge can be properly returned
 - [ ] An empty graph properly returns null
 '''
 
 
 import pytest
-
 from graph.graph import Graph, Vertex, Edge
 
 
@@ -55,13 +54,9 @@ def test_add_edge_with_weight():
 
 
 def test_add_edge_interloper_start():
-
     graph = Graph()
-
     start = Vertex("start")
-
     end = graph.add_node("end")
-
     with pytest.raises(KeyError):
         graph.add_edge(start, end)
 
@@ -84,74 +79,52 @@ def test_get_nodes():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
 def test_get_neighbors_none():
-
     graph = Graph()
-
     banana = graph.add_node("banana")
-
     neighbors = graph.get_neighbors(banana)
-
     assert len(neighbors) == 0
 
 
-@pytest.mark.skip("pending")
-def test_get_neighbors_returns_edges():
-
+def test_get_neighbors_none_alt_method():
     graph = Graph()
-
     banana = graph.add_node("banana")
+    neighbors = graph.get_edges(banana)
+    assert len(neighbors) == 0
 
+
+def test_get_neighbors_returns_edges():
+    graph = Graph()
+    banana = graph.add_node("banana")
     apple = graph.add_node("apple")
-
     graph.add_edge(apple, banana)
-
     neighbors = graph.get_neighbors(apple)
-
     assert len(neighbors) == 1
-
     neighbor = neighbors[0]
-
     assert isinstance(neighbor, Edge)
-
     assert neighbor.vertex.value == 'banana'
 
-@pytest.mark.skip("pending")
+
 def test_get_neighbors_returns_edges_with_default_weight():
-
     graph = Graph()
-
     banana = graph.add_node("banana")
-
     apple = graph.add_node("apple")
-
     graph.add_edge(apple, banana)
-
     neighbors = graph.get_neighbors(apple)
-
     actual = neighbors[0].weight
-
     expected = 0
-
     assert actual == expected
 
-@pytest.mark.skip("pending")
+
 def test_get_neighbors_returns_edges_with_custom_weight():
-
     graph = Graph()
-
     banana = graph.add_node("banana")
-
     apple = graph.add_node("apple")
-
     graph.add_edge(apple, banana, 44)
-
     neighbors = graph.get_neighbors(apple)
-
     neighbor_edge = neighbors[0]
-
     assert neighbor_edge.weight == 44
+
 
 def test_size_empty():
     graph = Graph()
