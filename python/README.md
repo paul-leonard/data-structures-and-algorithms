@@ -2,8 +2,147 @@
 
 ## Language: `Python`
 
+
 -----------------------------------------------------------------
 
+# Multi-bracket Validation (Code Challenge 37)
+Given a string, determine if the usuage of brackets, including (), [], and {}, is balanced and nested appropriately.  If usuage is acceptable, return True.  If not, return False.
+
+## Challenge
+Your function should take a string as its only argument, and should return a boolean representing whether or not the brackets in the string are balanced. There are 3 types of brackets:
+- Round Brackets : ()
+- Square Brackets : []
+- Curly Brackets : {}
+
+## Approach & Efficiency
+The input string is iterated through one character at a time.  If an open bracket is identified, that bracket is added to a Stack.  If an closed bracket is identified, the Stack is checked to see if it is empty.  If the Stack is empty, then the bracket pair was never opened and False is returned.  If the Stack contained a top, the top of the Stack is popped off.  If the character removed from the stack is not the opening matching bracket to the current closing bracket, then the function returns False.  The function also ensures that the stack is empty after iterating through the string to ensure all brackets were closed.
+
+Overall, the Big O for this function is O(n) for both time and space.  The algorithm must iterate through every character in the input string which will take time O(n).  Some additional Stack operations are performed including pushing, popping, and is_empty which all take O(1) and drop off of our estimates.  As for memory/space considerations, each character that is a bracket in the input string is stored in a stack.  If all of the characters are brackets, then O(n) space is required.  There is some additional overhead for space, but overall estimate results in O(n).
+
+## Solution
+[whiteboard](code_challenges/multi_bracket_validation/code_chal_37_bracket_valid.png)
+
+
+-----------------------------------------------------------------
+
+# Left Join Two Hashtables (Code Challenge 33)
+Given two hashtables, return an array of arrays resulting from a left join of the two tables.
+
+## Challenge
+- Write a function that LEFT JOINs two hashmaps into a single data structure.
+- The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+- The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+- Combine the key and corresponding values (if they exist) into a new data structure according to LEFT JOIN logic.
+- LEFT JOIN means all the values in the first hashmap are returned, and if values exist in the “right” hashmap, they are appended to the result row. If no values exist in the right hashmap, then some flavor of NULL should be appended to the result row.
+- The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic.
+- Avoid utilizing any of the library methods available to your language.
+
+## Approach & Efficiency
+The first hashtable is iterated through using its "buckets" array. Each key/value pair found is then stored in a new list.  Each key listed in the new array is then looked up in the second hashtable.  If the second hashtable contains a word for that key, that word is appended to the list.  If the second table does not contain a word under that key, then None is appended to the array.
+
+Because the algorithm must iterate through every value in the first hashtable and create a new data structure that is of equal size, both the time and memory complexity is Big O(n).
+
+## Solution
+[whiteboard](code_challenges/left_join/left_join_hashtables_wb.png)
+
+
+-----------------------------------------------------------------
+
+# Tree Intersection (Code Challenge 32)
+Given two binary trees, find values that occur in both trees and return them in a list.
+
+## Challenge
+- Write a function called tree_intersection that takes two binary tree parameters.
+- Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
+
+## Approach & Efficiency
+A Hashtable will be used to store each tree node value of BinaryTree1.  The second binary tree, BinaryTree2, will be traversed and at each node the Hashtable will be checked to see if contains that node's value.  If the value is a key in the Hashtable, the value will be added to a set called "repeats".  The "repeats" set will then be converted to a list and returned.
+
+Because the algorithm must operate and use the hashtable for each binary tree node, both the time and memory complexity is Big O(n).
+
+## Solution
+[whiteboard with chosen Hashtable solution](code_challenges/tree_intersection/tree_intersection_wb_with_n_hash.png)
+[whiteboard with discarded discussed tree.contains solution](code_challenges/tree_intersection/tree_intersection_wb_with_n2.png)
+
+## Sources
+- [convert set to list](https://www.geeksforgeeks.org/python-convert-set-into-a-list/)
+- [python sets](https://www.w3schools.com/python/python_sets.asp)
+- [add to set](https://www.geeksforgeeks.org/set-add-python/)
+- [empty set](https://www.w3resource.com/python-exercises/sets/python-sets-exercise-1.php)
+
+
+-----------------------------------------------------------------
+
+# Repeated Word (Code Challenge 31)
+Find the first repeated word in a book.
+
+## Challenge
+- Write a function that accepts a lengthy string parameter.
+- Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
+
+## Approach & Efficiency
+A Hashtable will be used to store each word identified in the string provided as the argument.  The key/value pair comprises of the word and the count of occurrences.
+
+Because the algorithm must operate and use the hashtable for each word in the string length, and store the releated data, both the time and memory complexity is Big O(n).
+
+## Sources
+- some tests were supplied by the assignement
+- Thanks to Alex for idea of `.punctuation`
+
+
+-----------------------------------------------------------------
+
+
+# Hashtable Data Structure (Code Challenge 30)
+Create a class for Hashtable that contains the methods of add, get, contains, and hash.
+
+## Challenge
+Implement a Hashtable with the following methods:
+1. add: takes in both the key and value. This method should hash the key, and add the key and 1. value pair to the table, handling collisions as needed.
+1. get: takes in the key and returns the value from the table.
+1. contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
+1. hash: takes in an arbitrary key and returns an index in the collection.
+
+
+## Approach & Efficiency
+A new class data structure is defined called Hashtable which stores data in an array.  An instance can be created with or without a size argument.  Key value pairs can be added to the Hashtable by calling the add or set method with arguments of the key/value pair.  The _hash method is then used to determine the array index where the key/value pair will be stored.  To account for proper operation during collisions at a given array index, a LinkedList is used.  Each LinkedList Node Value contains a tuple of the key/value pair being stored in the Hashtable.
+
+This approach has a time complexity of O(1) due the fast look up times for a given array (list) index.  The hash method allows for the add, set, and get methods to all know which index of the array to access.  As for memory, the Big O is O(n) because space is needed for the key/value pairs that are to be stored in the Hashtable.
+
+## Sources
+- some tests were supplied by JB
+- [skipping pytests](https://docs.pytest.org/en/latest/skipping.html)
+- [ord function](https://www.geeksforgeeks.org/ord-function-python/)
+
+
+-----------------------------------------------------------------
+Note:  Code Challenge 29 was a mock interview over merge_sort and quick_sort.
+-----------------------------------------------------------------
+
+
+# Quick Sorting of Integer List (Code Challenge 28)
+Write a function that sorts a given integer array in ascending order.
+
+## Challenge
+Given input of an integer array, the left index value, and the right index value, output an integer array of the same values sorted in ascending order through the use of a quick sort algorithm.
+
+## Approach & Efficiency
+A set of recursive functions are used to select a pivot value and compare each other value in the list againist it.  Repeated swapping of values occurs until all values that are less than the pivot value are placed to the left of the pivot value.  Also, any value greater than the pivot value is placed to the right of the pivot value.
+
+This approach has a time complexity of O(nlog(n)) which is better than the insertion sort algorithm.  As for memory, the Big O is considered O(1) because the array is sorted in-place.  However, techinically it is O(log^2(n)) because of recursive function calls.
+
+## Solution
+[Blog Post Explanation](code_challenges/quick_sort/BLOG)
+[whiteboard](code_challenges/quick_sort/quick_sort_whiteboard.png)
+
+## Sources
+- Thanks to Ryan P. for our collaborative work on the whiteboard.
+- [baseCS QuickSort Part 1](https://medium.com/basecs/pivoting-to-understand-quicksort-part-1-75178dfb9313)
+- [baseCS QuickSort Part 2](https://medium.com/basecs/pivoting-to-understand-quicksort-part-2-30161aefe1d3)
+- [Visualization of Quick Sort](https://www.youtube.com/watch?v=vxENKlcs2Tw)
+- [GeeksForGeeks Quick Sort](https://www.geeksforgeeks.org/python-program-for-quicksort/)
+
+-----------------------------------------------------------------
 
 # Pascal's Triangle (Code Challenge 38)
 Generate a Pascal's Triangle of height, n.
@@ -53,7 +192,7 @@ This approach has a time complexity of O(nlog(n)) which is better than the inser
 
 -----------------------------------------------------------------
 
-# Insertion Sorting of Integer Array (Code Challenge 26)
+# Insertion Sorting of Integer List (Code Challenge 26)
 Write a function that sorts a given integer array in ascending order.
 
 ## Challenge
