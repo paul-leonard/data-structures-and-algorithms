@@ -5,6 +5,50 @@
 
 -----------------------------------------------------------------
 
+
+# Implementation: Graphs (Code Challenge xx)
+Implement a Graph using an adjacency list and provide all of the typical methods.
+
+## Challenge
+Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
+
+AddNode()
+- Adds a new node to the graph
+- Takes in the value of that node
+- Returns the added node
+AddEdge()
+- Adds a new edge between two nodes in the graph
+- Include the ability to have a “weight”
+- Takes in the two nodes to be connected by the edge
+- Both nodes should already be in the Graph
+GetNodes()
+- Returns all of the nodes in the graph as a collection (set, list, or similar)
+GetNeighbors()
+- Returns a collection of edges connected to the given node
+- Takes in a given node
+- Include the weight of the connection in the returned collection
+Size()
+- Returns the total number of nodes in the graph
+
+## Approach & Efficiency
+This module creates an implementation of a Graph data structure.  The central feature of the Graph is its attribute of `_adjacency_list` that is a Python dictionary.  Each key within the dictionary is a vertex (aka node).  The value in the key:value pair within the dictionary is an array of all edges a given node has.  These edges are defined by their own class and contain attributes of `vertex` representing the end vertex of the edge and also the weight of that edge.  Nodes themeselves are also defined by a class.  On a node's initialization, the node is added as a key to the Graph's _adjancency_list.
+
+Becaue a Python dictionary is used to store the vertices/nodes as its keys, a given node may be referenced with a look up time of O(1). Each value within that dictionary is an array.  Each of the different methods will have a different Big O Time and Space complexity due to their actions.
+
+AddNode() and AddEdge() requires a space complexity of O(n) due to it adding the input arguments to the Graph.  The time it takes to complete this is O(n) because it must be completed on all of the input information.
+
+GetNodes() requires looking up all of the keys within a dictionary.  This is an O(1) time operation.  However, for space/memory considerations, it is dependedent on the size of the dictionary because it will affect the length of the returned array.
+
+GetNeighbors() requires looking up a dictionary key of a vertex that was provided.  This is an O(1) time operation, but may result in a long value being returned... which has a space complexity of O(n).  The data being provided to call this method includes both the vertex to look up and the Graph it(self).
+
+Size() method utilizes the length operation which operates on a dictionary with a time complexity of O(1) and also returns a single number for a space complexity of O(1).
+
+## Sources
+- [Big O considerations for Python built in data structure methods](https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/)
+
+
+-----------------------------------------------------------------
+
 # Multi-bracket Validation (Code Challenge 37)
 Given a string, determine if the usuage of brackets, including (), [], and {}, is balanced and nested appropriately.  If usuage is acceptable, return True.  If not, return False.
 
