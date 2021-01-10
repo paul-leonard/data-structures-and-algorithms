@@ -116,7 +116,9 @@ This approach has a time complexity of O(1) due the fast look up times for a giv
 
 
 -----------------------------------------------------------------
+
 Note:  Code Challenge 29 was a mock interview over merge_sort and quick_sort.
+
 -----------------------------------------------------------------
 
 
