@@ -61,7 +61,6 @@ def test_add_edge_interloper_start():
         graph.add_edge(start, end)
 
 
-@pytest.mark.skip("pending")
 def test_add_edge_interloper_end():
     graph = Graph()
     end = Vertex("end")
