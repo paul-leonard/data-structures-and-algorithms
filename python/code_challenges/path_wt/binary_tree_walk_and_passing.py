@@ -47,9 +47,10 @@ def print_tree_pass_higher(bin_tree):
   current = bin_tree.root
 
   def walk_and_print(node):
+
     returned_info_left, returned_info_right = 0
 
-    this_node_info = print(node.value)
+    this_node_info = node.value
 
     if node.left_node:
       returned_info_left = walk_and_print(node.left_node)

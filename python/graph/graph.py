@@ -25,15 +25,19 @@ Required Features:
 - [x] Returns the total number of nodes in the graph
 '''
 
+from stacks_and_queues.stacks_and_queues import Queue
+
 
 class Graph():
     def __init__(self):
         self._adjacency_list = {}
 
+
     def add_node(self, value):
         vertex = Vertex(value)
         self._adjacency_list[vertex] = []
         return vertex
+
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
         if start_vertex not in self._adjacency_list:
@@ -45,22 +49,55 @@ class Graph():
         self._adjacency_list[start_vertex].append(edge)
         return edge
 
+
     def get_nodes(self):
         return self._adjacency_list.keys()
+
 
     def size(self):
         return len(self._adjacency_list)
 
+
     def get_neighbors(self, vertex):
         return self._adjacency_list[vertex]
+
 
     def get_edges(self, vertex):
         return self.get_neighbors(vertex)
 
 
+    def breadth_first(self, starting_node, action_function):
+        list_of_nodes = []
+        breadth_queue = Queue()
+        breadth_queue.enqueue(starting_node)
+        starting_node.visited = True
+        i = 1
+
+        while not breadth_queue.is_empty():
+            print(f"trip {i} through while loop")
+            i += 1
+            current_vertex = breadth_queue.dequeue()
+            list_of_nodes.append(current_vertex)
+            current_edges = self._adjacency_list[current_vertex]
+            for edge in current_edges:
+                if edge.vertex.visited == False:
+                    breadth_queue.enqueue(edge.vertex)
+                    edge.vertex.visited = True
+
+        for node in self._adjacency_list:
+            node.visted = False
+
+        list_of_values_of_nodes = list(map(lambda x: x.value, list_of_nodes))
+        print("list_of_values_of_nodes:",list_of_values_of_nodes)
+        map(action_function(list_of_nodes))
+        return list_of_nodes
+
+
 class Vertex():
     def __init__(self, value):
         self.value = value
+        self.visited = False
+
 
 class Edge():
     def __init__(self, end_vertex, weight=0):
