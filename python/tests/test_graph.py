@@ -8,6 +8,11 @@ Required Testing Features:
 - [x] The proper size is returned, representing the number of nodes in the graph
 - [x] A graph with only one node and edge can be properly returned
 - [ ] An empty graph properly returns null
+
+Code Challenge 46 Test Features:
+- [x] test from pandora
+- [x] test from metroville
+- [x] test from narnia
 '''
 
 
@@ -195,3 +200,114 @@ def test_breadth_first():
   g.breadth_first(pandora, lambda v: values.append(v.value))
 
   assert values == ["Pandora", "Arendelle", "Metroville", "Monstropolis", "Narnia", "Naboo"]
+
+
+def test_breadth_first_return_values_pandora():
+
+  g = Graph()
+
+  pandora = g.add_node("Pandora")
+  arendelle = g.add_node("Arendelle")
+  metroville = g.add_node("Metroville")
+  monstropolis = g.add_node("Monstropolis")
+  narnia = g.add_node("Narnia")
+  naboo = g.add_node("Naboo")
+
+  g.add_edge(pandora, arendelle)
+  g.add_edge(arendelle, pandora)
+
+  g.add_edge(arendelle, metroville)
+  g.add_edge(metroville, arendelle)
+
+  g.add_edge(arendelle, monstropolis)
+  g.add_edge(monstropolis, arendelle)
+
+  g.add_edge(metroville, monstropolis)
+  g.add_edge(monstropolis, metroville)
+
+  g.add_edge(metroville, narnia)
+  g.add_edge(narnia, metroville)
+
+  g.add_edge(metroville, naboo)
+  g.add_edge(naboo, metroville)
+
+  g.add_edge(narnia, naboo)
+  g.add_edge(naboo, narnia)
+
+  values = g.breadth_first(pandora, lambda v: values.append(v.value))
+
+  assert values == ["Pandora", "Arendelle", "Metroville", "Monstropolis", "Narnia", "Naboo"]
+
+
+def test_breadth_first_return_values_metroville():
+
+  g = Graph()
+
+  pandora = g.add_node("Pandora")
+  arendelle = g.add_node("Arendelle")
+  metroville = g.add_node("Metroville")
+  monstropolis = g.add_node("Monstropolis")
+  narnia = g.add_node("Narnia")
+  naboo = g.add_node("Naboo")
+
+  g.add_edge(pandora, arendelle)
+  g.add_edge(arendelle, pandora)
+
+  g.add_edge(arendelle, metroville)
+  g.add_edge(metroville, arendelle)
+
+  g.add_edge(arendelle, monstropolis)
+  g.add_edge(monstropolis, arendelle)
+
+  g.add_edge(metroville, monstropolis)
+  g.add_edge(monstropolis, metroville)
+
+  g.add_edge(metroville, narnia)
+  g.add_edge(narnia, metroville)
+
+  g.add_edge(metroville, naboo)
+  g.add_edge(naboo, metroville)
+
+  g.add_edge(narnia, naboo)
+  g.add_edge(naboo, narnia)
+
+  values = g.breadth_first(metroville, lambda v: values.append(v.value))
+
+  assert values == ["Metroville", "Arendelle", "Monstropolis", "Narnia", "Naboo", "Pandora"]
+
+
+def test_breadth_first_return_values_narnia():
+
+  g = Graph()
+
+  pandora = g.add_node("Pandora")
+  arendelle = g.add_node("Arendelle")
+  metroville = g.add_node("Metroville")
+  monstropolis = g.add_node("Monstropolis")
+  narnia = g.add_node("Narnia")
+  naboo = g.add_node("Naboo")
+
+  g.add_edge(pandora, arendelle)
+  g.add_edge(arendelle, pandora)
+
+  g.add_edge(arendelle, metroville)
+  g.add_edge(metroville, arendelle)
+
+  g.add_edge(arendelle, monstropolis)
+  g.add_edge(monstropolis, arendelle)
+
+  g.add_edge(metroville, monstropolis)
+  g.add_edge(monstropolis, metroville)
+
+  g.add_edge(metroville, narnia)
+  g.add_edge(narnia, metroville)
+
+  g.add_edge(metroville, naboo)
+  g.add_edge(naboo, metroville)
+
+  g.add_edge(narnia, naboo)
+  g.add_edge(naboo, narnia)
+
+  values = g.breadth_first(narnia, lambda v: values.append(v.value))
+
+  assert values == ["Narnia", "Metroville", "Naboo","Arendelle", "Monstropolis", "Pandora"]
