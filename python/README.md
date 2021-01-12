@@ -6,7 +6,22 @@
 -----------------------------------------------------------------
 
 
-# Implementation: Graphs (Code Challenge xx)
+# Implementation: Graphs: Breadth-first Traversal (Code Challenge 46)
+Implement a breadth-first traversal method for the Graph class.
+
+## Challenge
+Extend the graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+## Approach & Efficiency
+A breadth-first traversal of a graph is completed using a queue.  The node entered as an argument to the method is first inserted into a queue.  A while loop is then entered that will run until the queue is emptied.  A node is dequeued, and any nodes it has edges too are added to the queue as long as they have not been visited before.  The nodes are marked as "visited" in their attribute as they are entered into the queue.  The nodes and their values are collected in the order they are dequeued and the list of values is returned to the method call.
+
+Every node of the graph must be visited to complete these actions, meaning the Big O complexity of time is O(n).  The memory needed to assembly the queue and the list of values is dependent on the input graph size and structure.  Therefore, in the worst case, the space complexity could be O(n).
+
+
+-----------------------------------------------------------------
+
+
+# Implementation: Graphs (Code Challenge 45)
 Implement a Graph using an adjacency list and provide all of the typical methods.
 
 ## Challenge
@@ -48,6 +63,7 @@ Size() method utilizes the length operation which operates on a dictionary with 
 
 
 -----------------------------------------------------------------
+
 
 # Multi-bracket Validation (Code Challenge 37)
 Given a string, determine if the usuage of brackets, including (), [], and {}, is balanced and nested appropriately.  If usuage is acceptable, return True.  If not, return False.
