@@ -1,15 +1,15 @@
 '''
 Required Testing Features:
-- [ ] test [Metroville, Pandora, ]
-- [ ] test [Arendelle, New Monstropolis, Naboo]
-- [ ] test [Naboo, Pandora]
-- [ ] test [Narnia, Arendelle, Naboo]
+- [x] test [Metroville, Pandora, ]
+- [x] test [Arendelle, New Monstropolis, Naboo]
+- [x] test [Naboo, Pandora]
+- [x] test [Narnia, Arendelle, Naboo]
 '''
 
 
 import pytest
 from graph.graph import Graph, Vertex, Edge
-from code_challenges.get_edge import get_edge
+from code_challenges.get_edge.get_edge import get_airfare
 
 
 def test_add_node_returns_vertex():
@@ -19,10 +19,11 @@ def test_add_node_returns_vertex():
 
 
 def test_edge_connection():
-    assert get_edge
+    assert get_airfare
 
 
-def test_metro_pan():
+@pytest.fixture
+def route_map():
 
   g = Graph()
 
@@ -54,25 +55,38 @@ def test_metro_pan():
   g.add_edge(narnia, naboo, 250)
   g.add_edge(naboo, narnia, 250)
 
+  g.add_edge(metroville, pandora, 82)
+  g.add_edge(pandora, metroville, 82)
+
+  g.add_edge(monstropolis, naboo, 73)
+  g.add_edge(naboo, monstropolis, 73)
+
+  return g
+
+
+def test_metro_pan(route_map):
   arr = ["Metroville", "Pandora"]
-  actual = get_edge(g, arr)
+  actual = get_airfare(route_map, arr)
   expected = [True, "$82"]
   assert actual == expected
 
 
+def test_ar_mon_naboo(route_map):
+  arr = ["Arendelle", "Monstropolis", "Naboo"]
+  actual = get_airfare(route_map, arr)
+  expected = [True, "$115"]
+  assert actual == expected
 
 
-#   arr = ["Arendelle", "Monstropolis", "Naboo"]
-#   actual = get_edge(g, arr)
-#   expected = [True, "$115"]
-#   assert actual == expected
+def test_naboo_pan(route_map):
+  arr = ["Naboo", "Pandora"]
+  actual = get_airfare(route_map, arr)
+  expected = [False, "$0"]
+  assert actual == expected
 
-#   arr = ["Naboo", "Pandora"]
-#   actual = get_edge(g, arr)
-#   expected = [False, "$0"]
-#   assert actual == expected
 
-#   arr = ["Narnia", "Arendelle", "Naboo"]
-#   actual = get_edge(g, arr)
-#   expected = [False, "$0"]
-#   assert actual == expected
+def test_nar_are_naboo(route_map):
+  arr = ["Narnia", "Arendelle", "Naboo"]
+  actual = get_airfare(route_map, arr)
+  expected = [False, "$0"]
+  assert actual == expected
