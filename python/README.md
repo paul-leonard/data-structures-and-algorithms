@@ -6,6 +6,27 @@
 -----------------------------------------------------------------
 
 
+# Get Airfare (Edge) Function (Code Challenge 47)
+Create a function to utilize a routemap and itinerary to determine if a flight is possible, and if so, its cost.
+
+## Challenge
+Write a function based on the specifications above, which takes in a graph, and an array of city names. Without utilizing any of the built-in methods available to your language, return whether the full trip is possible with direct flights, and how much it would cost.
+
+## Approach & Efficiency
+The overall function is called get_airfare and takes in parameters of a graph representing the routemap and an array representing the itinerary.  The keys() method of dictionaries is used to create an array of routemap nodes.  A helper function is then defined to determine if an individual leg is possible and its cost.  The helper function iterates through the dictionary nodes to find the departure city, then iterates through the edges in the adjacency list to find the destination city.  If the city is found, the helper function returns an array saying True and the cost.  If the city is not found, the helper function returns False and 0 as the price.  In the overall function, the itinerary array is iterated through sending city pairs to the helper function and then totaling the cost.  At the end of the itinerary, the overall function returns True and the cost, if the trip was possible.  If at any point, a city pair is not found, the function immeadiately returns False and the cost of $0.
+
+The Big O complexity for both time and space is O(n).  For time, it is possible the desired itinerary desires to visit each vertex in the graph.  This would mean the algorithm would have to visit each place.  There are iterations for both vertices and edges.  The Big O O(n) for memory is associated with capturing the vertices by using the dictionary.keys() method and storing the nodes in an array.
+
+## Whiteboard Solution
+[whiteboard](code_challenges/code_chal_47_airfare.png)
+
+## Sources
+- [TutorialsPoint: pytest fixtures](https://www.tutorialspoint.com/pytest/pytest_fixtures.htm)
+- [GeeksForGeeks: enumerate](https://www.geeksforgeeks.org/enumerate-in-python/)
+
+-----------------------------------------------------------------
+
+
 # Implementation: Graphs: Breadth-first Traversal (Code Challenge 46)
 Implement a breadth-first traversal method for the Graph class.
 
