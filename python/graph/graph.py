@@ -26,9 +26,12 @@ Required Features:
 
 Code Challenge 46 Feature:
 - [x] Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+Code Challenge 48 Feature:
+- [ ] Create a function that accepts an adjacency list as a graph, and conducts a depth first traversal. Without utilizing any of the built-in methods available to your language, return a collection of nodes in their pre-order depth-first traversal order.
 '''
 
-from stacks_and_queues.stacks_and_queues import Queue
+from stacks_and_queues.stacks_and_queues import Queue, Stack
 
 
 class Graph():
@@ -97,6 +100,44 @@ class Graph():
 
         # return list_of_nodes
         return list_of_values_of_nodes
+
+    def depth_first_traversal(self, starting_vertex):
+        visited = set()
+        depth_stack = Stack()
+
+        print(starting_vertex.value)
+
+        visited.add(starting_vertex)
+        depth_stack.push(starting_vertex)
+        trip = 1
+
+        while not depth_stack.is_empty():
+            print("trip through while: ", trip)
+            trip += 1
+
+            top = depth_stack.peek()
+
+            print(top.value)
+            x = 1
+            for edge in self._adjacency_list[top]:
+                print("for loop number: ",x)
+                x+=1
+                if edge.vertex not in visited:
+                    visited.add(edge.vertex)
+                    print(f"adding node {edge.vertex.value} to the stack")
+                    depth_stack.push(edge.vertex)
+                    break
+            depth_stack.pop()
+
+
+
+        traveled = list(map(lambda x: x.value, visited))
+
+        print('expected: ["a", "b", "c", "g", "d", "e", "h", "f"]' )
+        print("actual: ", traveled)
+
+        return traveled
+
 
 
 class Vertex():
