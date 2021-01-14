@@ -6,6 +6,29 @@
 -----------------------------------------------------------------
 
 
+# Graph Method for Depth-First In-Order Traversal (Code Challenge 48)
+Create a method that returns a list of values of the vertices from a Graph using depth first traversal.
+
+## Challenge
+Create a function that accepts an adjacency list as a graph, and conducts a depth first traversal. Without utilizing any of the built-in methods available to your language, return a collection of nodes in their pre-order depth-first traversal order.
+
+## Approach & Efficiency
+arch
+
+eff
+
+## Whiteboard Solution
+[whiteboard](code_challenges/code_chal_48_depthfirst.png)
+
+## Sources
+- [add to set at GeeksForGeeks](https://www.geeksforgeeks.org/set-add-python/)
+- [lambda function at GeeksForGeeks](https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/)
+
+
+
+-----------------------------------------------------------------
+
+
 # Get Airfare (Edge) Function (Code Challenge 47)
 Create a function to utilize a routemap and itinerary to determine if a flight is possible, and if so, its cost.
 

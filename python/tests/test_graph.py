@@ -13,12 +13,16 @@ Code Challenge 46 Test Features:
 - [x] test from pandora
 - [x] test from metroville
 - [x] test from narnia
+
+Code Challenge 48 Test Features:
+- [ ] test from pandora
+- [ ] test from metroville
+- [ ] test from narnia
 '''
 
 
 import pytest
 from graph.graph import Graph, Vertex, Edge
-
 
 def test_add_node_returns_vertex():
     graph = Graph()
@@ -311,3 +315,38 @@ def test_breadth_first_return_values_narnia():
   values = g.breadth_first(narnia, lambda v: values.append(v.value))
 
   assert values == ["Narnia", "Metroville", "Naboo","Arendelle", "Monstropolis", "Pandora"]
+
+
+@pytest.fixture
+def depth_graph():
+    graph = Graph()
+
+    a = graph.add_node("a")
+    b = graph.add_node("b")
+    c = graph.add_node("c")
+    d = graph.add_node("d")
+    e = graph.add_node("e")
+    f = graph.add_node("f")
+    g = graph.add_node("g")
+    h = graph.add_node("h")
+
+    graph.add_edge(a, b)
+    graph.add_edge(b, c)
+    graph.add_edge(c, g)
+    graph.add_edge(a, d)
+
+    graph.add_edge(d, e)
+    graph.add_edge(d, h)
+    graph.add_edge(d, f)
+
+    graph.add_edge(h, f)
+
+    return [graph, a]
+
+
+@pytest.mark.skip("pending")
+def test_dfs(depth_graph):
+    graph = depth_graph[0]
+    actual = graph.depth_first_traversal(depth_graph[1])
+    expected = ["a", "b", "c", "g", "d", "e", "h", "f"]
+    assert actual == expected
